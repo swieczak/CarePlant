@@ -1,0 +1,176 @@
+﻿<Window x:Class="CarePlant.Views.SignInWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CarePlant.Views" xmlns:System="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="SignInWindow"
+        Height="600" Width="800" AllowsTransparency="True" Background="Transparent"
+         WindowStyle="None" WindowStartupLocation="CenterScreen"
+        >
+    <Grid>
+        <Canvas>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="65,5,0,0">
+                    <Grid.Width>
+                        <System:Double>670</System:Double>
+                    </Grid.Width>
+                    <Grid.Height>
+                        <System:Double>350</System:Double>
+                    </Grid.Height>
+
+                </Grid>
+                <Grid Grid.Row="1" Margin="65,-20,0,0">
+
+                    <Grid.Width>
+                        <System:Double>670</System:Double>
+                    </Grid.Width>
+                    <Grid.Height>
+                        <System:Double>150</System:Double>
+                    </Grid.Height>
+                    <Button Width="130" Background="White" Foreground="DarkGreen" BorderThickness="0" BorderBrush="AliceBlue" Margin="264,128,276,-39"
+                                Content="Sign In" FontSize="24" Click="Button_Click"
+                                >
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+
+                        <Button.Style>
+                            <StaticResource ResourceKey="NotDefaultButton"/>
+                        </Button.Style>
+                    </Button>
+
+
+                </Grid>
+                <Ellipse Fill="FloralWhite" RenderTransformOrigin="0.5,0.5" Margin="224,-49,161.2,-68.4" Grid.RowSpan="2">
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="89.516"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+
+                </Ellipse>
+            </Grid>
+            <Label Width="115" Height="35" Content="Name" FontSize="16" Foreground="DarkGreen"
+                                   Canvas.Left="263" Canvas.Top="159"/>
+            <TextBox Width="140" RenderTransformOrigin="2.664,6.163" Height="30" Canvas.Left="405" Canvas.Top="159"/>
+            <TextBox Width="140" Height="30" Canvas.Left="405" Canvas.Top="204"/>
+            <Ellipse Width="65" Height="28" Fill="ForestGreen" RenderTransformOrigin="0.5,0.5" Canvas.Top="389">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="155.672"/>
+                        <TranslateTransform X="7.425" Y="-11.04"/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+                <Canvas.Left>
+                    <System:Double>145</System:Double>
+                </Canvas.Left>
+
+            </Ellipse>
+            <Ellipse Width="65" Height="28" Fill="ForestGreen" RenderTransformOrigin="0.5,0.5" Canvas.Top="379">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="126.549"/>
+                        <TranslateTransform X="29.503" Y="14.528"/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+                <Canvas.Left>
+                    <System:Double>132</System:Double>
+                </Canvas.Left>
+
+            </Ellipse>
+            <Ellipse Width="65" Height="28" Fill="ForestGreen" RenderTransformOrigin="0.5,0.5" Canvas.Top="404">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="186.418"/>
+                        <TranslateTransform X="-5.661" Y="-43.382"/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+                <Canvas.Left>
+                    <System:Double>156</System:Double>
+                </Canvas.Left>
+
+            </Ellipse>
+            <Label Width="115" Height="35" Content="Surname" FontSize="16" Foreground="DarkGreen"
+                Canvas.Left="263" Canvas.Top="204"/>
+            <Label Width="115" Height="35" Content="Nickname" FontSize="16" Foreground="DarkGreen"
+                Canvas.Left="263" Canvas.Top="253"/>
+            <Label Width="115" Height="35" Content="Password" FontSize="16" Foreground="DarkGreen"
+                Canvas.Left="263" Canvas.Top="298"/>
+            <TextBox Width="140" RenderTransformOrigin="2.664,6.163" Height="30" Canvas.Left="405" Canvas.Top="253"/>
+            <TextBox Width="140" Height="30" Canvas.Left="405" Canvas.Top="297"/>
+            <Button x:Name="Exit" Click="Exit_Click"
+                        Canvas.Left="632" Canvas.Top="74"
+                       >
+
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+
+                </Button.Resources>
+                <Button.Style>
+                    <StaticResource ResourceKey="ReturnButtonStyle"/>
+                </Button.Style>
+            </Button>
+            <Ellipse Width="65" Height="28" Fill="ForestGreen" RenderTransformOrigin="0.5,0.5" Canvas.Top="155">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="207.494"/>
+                        <TranslateTransform X="10.89" Y="-20.905"/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+                <Canvas.Left>
+                    <System:Double>94</System:Double>
+                </Canvas.Left>
+
+            </Ellipse>
+            <Ellipse Width="65" Height="28" Fill="ForestGreen" RenderTransformOrigin="0.5,0.5" Canvas.Top="145">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="178.371"/>
+                        <TranslateTransform X="17.764" Y="5.545"/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+                <Canvas.Left>
+                    <System:Double>79</System:Double>
+                </Canvas.Left>
+
+            </Ellipse>
+            <Ellipse Width="65" Height="28" Fill="ForestGreen" RenderTransformOrigin="0.5,0.5" Canvas.Top="171">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="251.744"/>
+                        <TranslateTransform X="12.365" Y="-48.785"/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+                <Canvas.Left>
+                    <System:Double>103</System:Double>
+                </Canvas.Left>
+
+            </Ellipse>
+        </Canvas>
+    </Grid>
+</Window>
