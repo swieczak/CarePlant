@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Forms;
 
 namespace CarePlant.Views
 {
@@ -31,7 +32,9 @@ namespace CarePlant.Views
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+
         }
+
 
     }
 }

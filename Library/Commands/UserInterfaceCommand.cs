@@ -18,18 +18,17 @@ namespace CarePlant.Commands
         {
             return true;
         }
-        public LogInWindow LogInWindow { get; set; }
+        public LogInWindow LoginWindow { get; set; }
         public UserInterfaceCommand(LogInWindow LogInWindow)
         {
-            this.LogInWindow = LogInWindow;
+            this.LoginWindow = LogInWindow;
         }
         public void Execute(object parameter)
         {
             UserInterfaceViewModel UserInterfaceViewModel = new UserInterfaceViewModel();
-         // LogInWindow.Close();
+            UserInterface Userinterface = new UserInterface(UserInterfaceViewModel); 
 
-            UserInterface UserInterface = new UserInterface(UserInterfaceViewModel);
-            UserInterface.ShowDialog();
+            Userinterface.ShowDialog();
         }
     }
 }

@@ -6,16 +6,28 @@
              xmlns:local="clr-namespace:CarePlant.Views"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="400">
-    <StackPanel>
-        <TextBlock Text="Regular care"
+    <StackPanel Margin="0,0,0,25">
+
+
+        <TextBlock
                    Foreground="DarkGreen"
                    FontSize="28"
                    HorizontalAlignment="Left"
-                   Margin="0,0,0,20"/>
-        <StackPanel Orientation="Horizontal">
+                   Margin="0,0,0,20"><Run Text="Your r"/><Run Text="egular care"/></TextBlock>
+
+
+        <StackPanel>
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Margin" Value="15,0,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+            <StackPanel Orientation="Horizontal"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="217">
             <Border Width="180"
                     Height="150"
-                    CornerRadius="20">
+                    CornerRadius="20" Margin="0,41,0,21">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                         <GradientStop Color="Aquamarine" Offset="0.0"/>
@@ -23,7 +35,7 @@
                     </LinearGradientBrush>
                 </Border.Background>
                 <Grid>
-                    <StackPanel>
+                    <StackPanel Margin="0,0,0,0.4">
                         <TextBlock Text=""
                                    Foreground="FloralWhite"
                                    FontSize="28"
@@ -34,7 +46,7 @@
             <Border Width="180"
                     Height="150"
                     CornerRadius="20"
-                    Margin="40,0,0,0">
+                    Margin="40,41,0,21">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                         <GradientStop Color="LawnGreen" Offset="0.0"/>
@@ -43,39 +55,22 @@
                 </Border.Background>
             </Border>
         </StackPanel>
-        
-        
-        <StackPanel>
-            <StackPanel.Resources>
+        <Button HorizontalAlignment="Left" Height="56" Margin="123,30,0,0" Width="147">
+            <Button.Resources>
                 <Style TargetType="{x:Type Border}">
-                    <Setter Property="Margin" Value="15,0,0,0"/>
+                    <Setter Property="CornerRadius" Value="10"/>
                 </Style>
-            </StackPanel.Resources>
-            <TextBlock Text="Special care"
-                   Foreground="DarkGreen"
-                   FontSize="28"
-                   HorizontalAlignment="Left"
-                   Margin="0,20,0,10"/>
-            <StackPanel Orientation="Horizontal">
-                <Border Width="120"
-                    Height="120"
-                    CornerRadius="10"
-                    Margin="5,0,15,0"
-                    Background="DarkKhaki">
-                </Border>
-                <Border Width="120"
-                    Height="120"
-                    CornerRadius="10"
-                    Margin="0,0,15,0"
-                    Background="Teal">
-                </Border>
-                <Border Width="120"
-                    Height="120"
-                    CornerRadius="10"
-                    Margin="0,0,15,0"
-                    Background="Coral">
-                </Border>
-            </StackPanel>
-        </StackPanel>
+            </Button.Resources>
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                    <GradientStop Color="ForestGreen" Offset="0.0"/>
+                    <GradientStop Color="DarkGreen" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <TextBlock Text="All done!"
+                           Foreground="White"
+                           FontSize="20"/>
+        </Button>
+
     </StackPanel>
 </UserControl>

@@ -21,10 +21,132 @@
                    FontSize="28"
                    HorizontalAlignment="Left"
                    Margin="0,0,0,10"/>
-            <ListView MinHeight="350" SelectionChanged="ListView_SelectionChanged"/>
+            <ListView MinHeight="270" SelectionChanged="ListView_SelectionChanged" Height="270" Margin="0,0,0.4,0"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,-249.6,0" Height="96">
+                <Border Width="55"
+                    CornerRadius="10"
+                    Margin="5,20,15,19">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                            <GradientStop Color="LightSeaGreen" Offset="0.0"/>
+                            <GradientStop Color="Blue" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Button Content="Podlanie" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Height="57" VerticalAlignment="Top" Width="55" Margin="0,0,0,-0.2">
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </Border>
+                <Border Width="53"
+                    CornerRadius="10"
+                    Margin="0,20,15,19">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                            <GradientStop Color="LightSkyBlue" Offset="0.0"/>
+                            <GradientStop Color="CornflowerBlue" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Button Content="Zroszenie" Background="Transparent" BorderThickness="0" Height="57" Margin="0,0,-0.2,-0.2" VerticalAlignment="Top">
+                    <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </Border>
+                <Border Width="53"
+                    CornerRadius="10"
+                    Margin="0,20,15,19">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                            <GradientStop Color="LightYellow" Offset="0.0"/>
+                            <GradientStop Color="DarkRed" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Button Content="Nawóz" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0"  Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2">
+                        <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                </Border>
+                <Border Width="53"
+                    CornerRadius="10"
+                    Margin="0,20,15,19">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                            <GradientStop Color="LightGoldenrodYellow" Offset="0.0"/>
+                            <GradientStop Color="Coral" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Button Content="Przesadzenie" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Height="57" Margin="0,0,-0.2,-0.2" VerticalAlignment="Top" Width="53">
+                        <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                </Border>
+                <Border Width="53"
+                    CornerRadius="10"
+                    Margin="0,20,15,19">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                            <GradientStop Color="LightGoldenrodYellow" Offset="0.0"/>
+                            <GradientStop Color="RosyBrown" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Button Content="Usunięcie kwiatów" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2">
+                        <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                </Border>
+                <Border Width="53"
+                    CornerRadius="10"
+                    Margin="0,20,15,19">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                            <GradientStop Color="LemonChiffon" Offset="0.0"/>
+                            <GradientStop Color="GreenYellow" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Button Content="Przycięcie liści" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2">
+                        <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                </Border>
+                <Border Width="53"
+                    CornerRadius="10"
+                    Margin="0,20,15,19">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                            <GradientStop Color="LightPink" Offset="0.0"/>
+                            <GradientStop Color="DeepPink" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Button Content="Zmiana stanowiska" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2">
+                        <Button.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="10"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                </Border>
+
+            </StackPanel>
         </StackPanel>
 
-        <StackPanel Grid.Column="1" >
+        <StackPanel Grid.ColumnSpan="2" Margin="250,0,0.2,113.4" >
             <TextBlock Text="Family:"
                    Foreground="DarkGreen"
                    FontSize="20"
@@ -40,61 +162,69 @@
                    FontSize="20"
                    HorizontalAlignment="Right"
                    Margin="0,0,20,80"/>
-            <Border
-                CornerRadius="20"
-                Width="90" 
-                Height="50"
-                Margin="0,0,0,0">
-                <Button>
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                            <GradientStop Color="Aqua" Offset="0.0"/>
-                            <GradientStop Color="DarkCyan" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                    <TextBlock Text="Add"
+            <Button Margin="24,-60,19.8,0" Height="36">
+                <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="ForestGreen" Offset="0.0"/>
+                        <GradientStop Color="DarkGreen" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                
+                <TextBlock Text="Add"
                            Foreground="White"
                            FontSize="20"/>
-                </Button>
+            </Button>
+            <Button Margin="24,-6,19.8,0" Height="36" Click="Button_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="ForestGreen" Offset="0.0"/>
+                        <GradientStop Color="DarkGreen" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <TextBlock Text="Edit"
+                    Foreground="White"
+                    FontSize="20"/>
+            </Button>
+            <Button Margin="24,6,19.8,0" Height="36">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="ForestGreen" Offset="0.0"/>
+                        <GradientStop Color="DarkGreen" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <TextBlock Text="Delete"
+                           Foreground="White"
+                           FontSize="20"/>
+            </Button>
+            <Border
+                CornerRadius="20" 
+                Height="49"
+                Margin="17,0,16.8,0" RenderTransformOrigin="0.263,-0.169">
+                <Border.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.25"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Border.RenderTransform>
             </Border>
 
-            <Border
-                CornerRadius="20"
-                Width="90" 
-                Height="50"
-                Margin="0,0,0,0">
-                <Button>
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                            <GradientStop Color="Aqua" Offset="0.0"/>
-                            <GradientStop Color="DarkCyan" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                    <TextBlock Text="Delete"
-                           Foreground="White"
-                           FontSize="20"/>
-                </Button>
-            </Border>
-
-            <Border Grid.Row="0" 
-                Grid.Column="1"
-                CornerRadius="20"
-                Width="90" 
-                Height="50"
-                Margin="0,10,0,0">
-                <Button>
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                            <GradientStop Color="Aquamarine" Offset="0.0"/>
-                            <GradientStop Color="LightSeaGreen" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                    <TextBlock Text="Perform:"
-                           Foreground="White"
-                           FontSize="20"/>
-                </Button>
-            </Border>
-            
         </StackPanel>
 
 
@@ -103,29 +233,7 @@
             </ComboBox>
             <ComboBox Margin="0,0,0,15">
             </ComboBox>
-            <ComboBox Margin="0,0,0,80">
-            </ComboBox>
-
-            <Border Grid.Row="1" 
-                Grid.Column="2"
-                CornerRadius="20"
-                Width="90" 
-                Height="50"
-                Margin="0,0,0,0">
-                <Button>
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
-                            <GradientStop Color="Aqua" Offset="0.0"/>
-                            <GradientStop Color="DarkCyan" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                    <TextBlock Text="Edit"
-                           Foreground="White"
-                           FontSize="20"/>
-                </Button>
-            </Border>
-            <ComboBox Margin="0,75,0,0">
-            </ComboBox>
+            <TextBox Margin="0,0,-0.2,80" Height="22"/>
         </StackPanel>
     </Grid>
 </UserControl>
