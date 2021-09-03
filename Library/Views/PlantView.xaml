@@ -32,7 +32,7 @@
                             <GradientStop Color="Blue" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
-                    <Button Content="Podlanie" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Height="57" VerticalAlignment="Top" Width="55" Margin="0,0,0,-0.2">
+                    <Button Content="Podlej" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Height="57" VerticalAlignment="Top" Width="55" Margin="0,0,0,-0.2">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="10"/>
@@ -49,7 +49,7 @@
                             <GradientStop Color="CornflowerBlue" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
-                    <Button Content="Zroszenie" Background="Transparent" BorderThickness="0" Height="57" Margin="0,0,-0.2,-0.2" VerticalAlignment="Top">
+                    <Button Content="Zroś" Background="Transparent" BorderThickness="0" Height="57" Margin="0,0,-0.2,-0.2" VerticalAlignment="Top">
                     <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="10"/>
@@ -83,7 +83,7 @@
                             <GradientStop Color="Coral" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
-                    <Button Content="Przesadzenie" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Height="57" Margin="0,0,-0.2,-0.2" VerticalAlignment="Top" Width="53">
+                    <Button Content="Przesadź" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Height="57" Margin="0,0,-0.2,-0.2" VerticalAlignment="Top" Width="53">
                         <Button.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="10"/>
@@ -100,7 +100,7 @@
                             <GradientStop Color="RosyBrown" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
-                    <Button Content="Usunięcie kwiatów" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2">
+                    <Button Content=" Usuń &#10;kwiaty" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2">
                         <Button.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="10"/>
@@ -117,7 +117,7 @@
                             <GradientStop Color="GreenYellow" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
-                    <Button Content="Przycięcie liści" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2">
+                    <Button Content="Przytnij &#10;  liście" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2">
                         <Button.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="10"/>
@@ -134,7 +134,7 @@
                             <GradientStop Color="DeepPink" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
-                    <Button Content="Zmiana stanowiska" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2">
+                    <Button Content=" Zmień &#10;miejsce" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2">
                         <Button.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="10"/>
@@ -174,7 +174,6 @@
                         <GradientStop Color="DarkGreen" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.Background>
-                
                 <TextBlock Text="Add"
                            Foreground="White"
                            FontSize="20"/>
