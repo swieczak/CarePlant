@@ -4,8 +4,10 @@
              xmlns:local="clr-namespace:CarePlant"
              xmlns:viewModel="clr-namespace:CarePlant.ViewModels"
              xmlns:view="clr-namespace:CarePlant.Views"
-             StartupUri="Views\MainWindow.xaml">
+             StartupUri="Views\MainWindow.xaml"
+             xmlns:fa5="http://schemas.fontawesome.com/icons/">
     <Application.Resources>
+
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="GeneralDictionary.xaml"/>
@@ -19,7 +21,7 @@
             <DataTemplate DataType="{x:Type viewModel:PlantViewModel}">
                 <view:PlantView/>
             </DataTemplate>
-
+            <FontFamily x:Key="FontAwesome">/Fonts/fontawesome-webfont.ttf#FontAwesome</FontFamily>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
