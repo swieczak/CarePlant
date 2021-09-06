@@ -6,8 +6,13 @@
              xmlns:fa5="http://schemas.fontawesome.com/icons/"
              xmlns:local="clr-namespace:CarePlant.Views"
              mc:Ignorable="d" 
+             xmlns:vm="clr-namespace:CarePlant.ViewModels"
              d:DesignHeight="414" d:DesignWidth="500">
-    <Grid>
+    <Control.Resources>
+        <vm:PlantViewModel x:Key="plantViewModel"/>
+    </Control.Resources>
+
+        <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="125"/>
@@ -231,10 +236,8 @@
 
 
         <StackPanel Grid.Column="2">
-            <ComboBox Margin="0,55,0,15">
-            </ComboBox>
-            <ComboBox Margin="0,0,0,15">
-            </ComboBox>
+            <ComboBox Margin="0,55,0,15" ItemsSource="{Binding Families}"/>
+            <ComboBox Margin="0,0,0,15"/>
             <TextBox Margin="0,0,-0.2,80" Height="22"/>
         </StackPanel>
     </Grid>
