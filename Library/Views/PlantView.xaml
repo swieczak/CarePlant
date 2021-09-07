@@ -3,6 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             
              xmlns:fa5="http://schemas.fontawesome.com/icons/"
              xmlns:local="clr-namespace:CarePlant.Views"
              mc:Ignorable="d" 
@@ -12,7 +15,7 @@
         <vm:PlantViewModel x:Key="plantViewModel"/>
     </Control.Resources>
 
-        <Grid>
+    <Grid DataContext="{StaticResource plantViewModel}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="125"/>
@@ -236,9 +239,12 @@
 
 
         <StackPanel Grid.Column="2">
-            <ComboBox Margin="0,55,0,15" ItemsSource="{Binding Families}"/>
-            <ComboBox Margin="0,0,0,15"/>
-            <TextBox Margin="0,0,-0.2,80" Height="22"/>
+            <ComboBox Margin="0,55,0,15" Name="FamilyCombo" 
+                      ItemsSource="{Binding Families}" SelectedValue="{Binding CurrentFamily, Mode=TwoWay}">
+                
+            </ComboBox>
+                <ComboBox Margin="0,0,0,15" Name="SpeciesCombo" ItemsSource="{Binding Species}"/>
+                <TextBox Margin="0,0,-0.2,80" Height="22"/>
         </StackPanel>
     </Grid>
 </UserControl>

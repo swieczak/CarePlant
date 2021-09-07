@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CarePlant.Model
 {
-    class Species
+    public class Species
+
     {
         public string Name { get; set; }
         public int ID { get; set; }

@@ -52,7 +52,8 @@ namespace CarePlant.Model.DAL
             List<Species> species = new List<Species>();
             using (connection = new MySqlConnection(connStringBuilder.ToString()))
             {
-                MySqlCommand command = new MySqlCommand($"SELECT `id_rodziny`, `nazwa`, `fk_rodziny` FROM `rodziny` WHERE `fk_rodziny` = {idRodziny}", connection);
+                MySqlCommand command = new MySqlCommand($"SELECT `id_gatunki`, `nazwa`, `fk_rodziny` FROM `gatunki` WHERE `fk_rodziny` = {idRodziny}", connection);
+
                 connection.Open();
                 var dataReader = command.ExecuteReader();
                 if (dataReader.HasRows)

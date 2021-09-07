@@ -53,6 +53,9 @@
     <ApplicationIcon>sun-solid.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.31\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
     <Reference Include="MySqlConnector, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
       <HintPath>..\packages\MySqlConnector.1.3.11\lib\net461\MySqlConnector.dll</HintPath>
     </Reference>
@@ -103,12 +106,14 @@
     <Compile Include="Model\Species.cs" />
     <Compile Include="Model\DAL\DataAccess.cs" />
     <Compile Include="Model\Family.cs" />
-    <Compile Include="ViewModels\ActionViewModel.cs" />
+    <Compile Include="ViewModels\Actions\ActionViewModel.cs" />
+    <Compile Include="ViewModels\BaseClass\RealyCommand.cs" />
+    <Compile Include="ViewModels\BaseClass\ViewModelBase.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
-    <Compile Include="ViewModels\HubViewModel.cs" />
-    <Compile Include="ViewModels\LogInViewModel.cs" />
+    <Compile Include="ViewModels\Hub\HubViewModel.cs" />
+    <Compile Include="ViewModels\Login\LogInViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\PlantViewModel.cs" />
+    <Compile Include="ViewModels\Plants\PlantViewModel.cs" />
     <Compile Include="ViewModels\UserInterfaceViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="Views\ActionView.xaml.cs">
@@ -157,7 +162,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModels\SignInViewModel.cs" />
+    <Compile Include="ViewModels\singin\SignInViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
