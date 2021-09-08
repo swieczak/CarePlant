@@ -189,7 +189,7 @@
                            FontSize="20"/>
                 
             </Button>
-            <Button Margin="24,-6,19.8,0" Height="36" Click="Button_Click">
+            <Button Margin="24,-6,19.8,0" Height="36">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>

@@ -3,12 +3,25 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CarePlant.Views" xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:CarePlant.Views"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:vm="clr-namespace:CarePlant.ViewModels"
         mc:Ignorable="d"
         Title="SignInWindow"
         Height="600" Width="800" AllowsTransparency="True" Background="Transparent"
          WindowStyle="None" WindowStartupLocation="CenterScreen"
         >
+    <Control.Resources>
+        <vm:SignInViewModel x:Key="signInViewModel"/>
+    </Control.Resources>
+    
+    <Window.DataContext>
+        <vm:SignInViewModel x:Name="signInViewModel"/>
+    </Window.DataContext>
+
+
+
+
     <Grid>
         <Canvas>
             <Grid>
@@ -33,7 +46,7 @@
                     <Grid.Height>
                         <System:Double>150</System:Double>
                     </Grid.Height>
-                    <Button Width="130" Background="White" Foreground="DarkGreen" BorderThickness="0" BorderBrush="AliceBlue" Margin="264,128,276,-39"
+                    <Button  x:Name="signinButton" Command="{Binding Signing}" Width="130" Background="White" Foreground="DarkGreen" BorderThickness="0" BorderBrush="AliceBlue" Margin="264,128,276,-39"
                                 Content="Sign In" FontSize="24" Click="Button_Click"
                                 >
                         <Button.Resources>
@@ -61,10 +74,21 @@
 
                 </Ellipse>
             </Grid>
-            <Label Width="115" Height="35" Content="Name" FontSize="16" Foreground="DarkGreen"
+
+           
+                <Label Width="115" Height="35" Content="Name" FontSize="16" Foreground="DarkGreen"
                                    Canvas.Left="263" Canvas.Top="159"/>
-            <TextBox Width="140" RenderTransformOrigin="2.664,6.163" Height="30" Canvas.Left="405" Canvas.Top="159"/>
-            <TextBox Width="140" Height="30" Canvas.Left="405" Canvas.Top="204"/>
+            <TextBox x:Name="username" Text="{Binding UserName}" Width="140" RenderTransformOrigin="2.664,6.163" Height="30" Canvas.Left="405" Canvas.Top="159"/>
+            <TextBox x:Name="usersurname" Text="{Binding UserSurname}" Width="140" Height="30" Canvas.Left="405" Canvas.Top="204"/>
+            <Label Width="115" Height="35" Content="Surname" FontSize="16" Foreground="DarkGreen"
+                Canvas.Left="263" Canvas.Top="204"/>
+            <Label Width="115" Height="35" Content="Nickname" FontSize="16" Foreground="DarkGreen"
+                Canvas.Left="263" Canvas.Top="253"/>
+            <Label Width="115" Height="35" Content="Password" FontSize="16" Foreground="DarkGreen"
+                Canvas.Left="263" Canvas.Top="298"/>
+            <TextBox x:Name="usernick" Text="{Binding UserNickname}" Width="140" RenderTransformOrigin="2.664,6.163" Height="30" Canvas.Left="405" Canvas.Top="253"/>
+            <TextBox x:Name="userpassword" Text="{Binding UserPassword}" Width="140" Height="30" Canvas.Left="405" Canvas.Top="297"/>
+
             <Ellipse Width="65" Height="28" Fill="ForestGreen" RenderTransformOrigin="0.5,0.5" Canvas.Top="389">
                 <Ellipse.RenderTransform>
                     <TransformGroup>
@@ -107,14 +131,7 @@
                 </Canvas.Left>
 
             </Ellipse>
-            <Label Width="115" Height="35" Content="Surname" FontSize="16" Foreground="DarkGreen"
-                Canvas.Left="263" Canvas.Top="204"/>
-            <Label Width="115" Height="35" Content="Nickname" FontSize="16" Foreground="DarkGreen"
-                Canvas.Left="263" Canvas.Top="253"/>
-            <Label Width="115" Height="35" Content="Password" FontSize="16" Foreground="DarkGreen"
-                Canvas.Left="263" Canvas.Top="298"/>
-            <TextBox Width="140" RenderTransformOrigin="2.664,6.163" Height="30" Canvas.Left="405" Canvas.Top="253"/>
-            <TextBox Width="140" Height="30" Canvas.Left="405" Canvas.Top="297"/>
+
             <Button x:Name="Exit" Click="Exit_Click"
                         Canvas.Left="632" Canvas.Top="74"
                        >

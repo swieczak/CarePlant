@@ -13,7 +13,7 @@ namespace CarePlant.Commands
    public class SignInSectionCommand:ICommand
     {
         public event EventHandler CanExecuteChanged;
-
+        private readonly LogInViewModel _viewModel;
         public bool CanExecute(object parameter)
         {
             return true;
