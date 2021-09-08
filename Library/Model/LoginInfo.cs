@@ -10,7 +10,7 @@ namespace CarePlant.Model
     {
         public string Nick { get; set; }
         public string Password { get; set; }
-
+        public int ID { get; set; }
 
         public LogInInfo(string nick, string password)
         {

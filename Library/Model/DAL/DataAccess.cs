@@ -10,8 +10,8 @@ namespace CarePlant.Model.DAL
     using CarePlant.Model;
     class DataAccess
     {
-        MySqlConnectionStringBuilder connStringBuilder;
-        MySqlConnection connection;
+        static MySqlConnectionStringBuilder connStringBuilder;
+        static MySqlConnection connection;
 
         private string GET_FAMILIES_QUERY = "SELECT `id_rodziny`, `nazwa` FROM `rodziny` ";
 
@@ -23,7 +23,7 @@ namespace CarePlant.Model.DAL
             connStringBuilder.UserID = "root";
             connStringBuilder.Password = "";
             connStringBuilder.Server = "localhost";
-            connStringBuilder.Database = "kwiatki";
+            connStringBuilder.Database = "kwiotki";
             connStringBuilder.Port = 3306;
 
         }
@@ -81,38 +81,44 @@ namespace CarePlant.Model.DAL
             using (connection = new MySqlConnection(connStringBuilder.ToString()))
             {
                 //komenda sprawdzająca istnienie danych w bazie
-                MySqlCommand command1 = new MySqlCommand($"SELECT `user`, `imie`, `nazwisko` FROM `osoby` WHERE `user` = {signInfo.Nick} OR `imie` = {signInfo.Name} OR `nazwisko` = {signInfo.Surname}", connection);
+                MySqlCommand command1 = new MySqlCommand($"SELECT `user`, `imie`, `nazwisko` FROM `osoby` WHERE `user` = '{signInfo.Nick}'", connection); //OR `imie` = {signInfo.Name} OR `nazwisko` = {signInfo.Surname}", connection);
                 //komenda dodająca użytkownika (nie wiem czy działa)
-                MySqlCommand command2 = new MySqlCommand($"INSERT INTO `osoby` (user, imie, nazwisko, password) VALUES('{signInfo.Nick}', '{signInfo.Name}', '{signInfo.Surname}', '{signInfo.Password}')", connection);
+                MySqlCommand command2 = new MySqlCommand($"INSERT INTO `osoby` (user, imie, nazwisko, password) VALUES('{signInfo.Nick}', '{signInfo.Name}', '{signInfo.Surname}', MD5('{signInfo.Password}'))", connection);
 
                 connection.Open();
                 var dataReader = command1.ExecuteReader();
                 if (dataReader.HasRows)
                 {
+                    connection.Close();
+                    
                     return signed;
                     // dodaj rekord do tablicu osoby
                     //var dataExecutor = command2.metodawywołującakomendę();
                 }
+                connection.Close();
+                connection.Open();
+                command2.ExecuteNonQueryAsync();
+                connection.Close();
             }
             signed = true;
             return signed;
         }
 
 
-        public bool logging(LogInInfo loginInfo)
+        public static int logging(LogInInfo loginInfo)
         {
-            bool signed = false;
+            int signed = 0;
 
             using (connection = new MySqlConnection(connStringBuilder.ToString()))
             {
                 //komenda sprawdzająca istnienie danych w bazie
-                MySqlCommand command1 = new MySqlCommand($"SELECT `user`,`password` FROM `osoby` WHERE `user` = {loginInfo.Nick} AND `password` = {loginInfo.Password}", connection);
-
+                MySqlCommand command1 = new MySqlCommand($"SELECT `id_osoby` FROM `osoby` WHERE `user` = '{loginInfo.Nick}' AND `password` = MD5('{loginInfo.Password}')", connection);
                 connection.Open();
                 var dataReader = command1.ExecuteReader();
                 if (dataReader.HasRows)
                 {
-                    signed = true;
+                    dataReader.Read();
+                    signed = (int)dataReader["id_osoby"];
                 }
             }
             return signed;

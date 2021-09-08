@@ -1,4 +1,5 @@
-﻿using CarePlant.ViewModels;
+﻿using CarePlant.Model.DAL;
+using CarePlant.ViewModels;
 using CarePlant.Views;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,8 @@ using System.Windows.Input;
 
 namespace CarePlant.Commands
 {
+
+    
    public class UserInterfaceCommand:ICommand
     {
         public event EventHandler CanExecuteChanged;
@@ -26,9 +29,19 @@ namespace CarePlant.Commands
         public void Execute(object parameter)
         {
             UserInterfaceViewModel UserInterfaceViewModel = new UserInterfaceViewModel();
-            UserInterface Userinterface = new UserInterface(UserInterfaceViewModel); 
+            UserInterface Userinterface = new UserInterface(UserInterfaceViewModel);
 
-            Userinterface.ShowDialog();
+            LogInViewModel.logInfo.ID = DataAccess.logging(LogInViewModel.logInfo);
+            if(LogInViewModel.logInfo.ID != 0)
+            {
+                //LoginWindow.Close();
+                Userinterface.ShowDialog();
+            }
+
+
+
+
+
         }
     }
 }

@@ -12,13 +12,14 @@ using CarePlant.Views;
 namespace CarePlant.ViewModels
 {
     using System.Windows.Input;
+    using CarePlant.Model.DAL;
     using Model;
     using ViewModels.BaseClass;
     public class LogInViewModel : System.ComponentModel.INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private Model.DAL.DataAccess dataAccess = new Model.DAL.DataAccess();
-        private LogInInfo logInfo = new Model.LogInInfo("", "");
+        static public LogInInfo logInfo = new LogInInfo("", "");
 
 
         private string _userNick;
@@ -42,10 +43,13 @@ namespace CarePlant.ViewModels
             set
             {
                 _userPass = value;
-                logInfo.Nick = _userPass;
+                logInfo.Password = _userPass;
                 OnPropertyChanged("UserPass");
             }
         }
+
+
+
 
         public LogInWindow LogInWindow { get; set; }
         public LogInViewModel()
