@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace CarePlant.Model
 {
-    public class LoginInfo
+    public class LogInInfo
     {
         public string Nick { get; set; }
         public string Password { get; set; }
 
 
-        public LoginInfo(string nick, string password)
+        public LogInInfo(string nick, string password)
         {
             Nick = nick;
             Password = password;

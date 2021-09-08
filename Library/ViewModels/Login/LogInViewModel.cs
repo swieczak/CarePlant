@@ -11,8 +11,42 @@ using CarePlant.Views;
 
 namespace CarePlant.ViewModels
 {
-    public class LogInViewModel : BaseViewModel
+    using System.Windows.Input;
+    using Model;
+    using ViewModels.BaseClass;
+    public class LogInViewModel : System.ComponentModel.INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        private Model.DAL.DataAccess dataAccess = new Model.DAL.DataAccess();
+        private LogInInfo logInfo = new Model.LogInInfo("", "");
+
+
+        private string _userNick;
+
+        public string UserNick
+        {
+            get { return _userNick; }
+            set
+            {
+                _userNick = value;
+                logInfo.Nick = _userNick;
+                OnPropertyChanged("UserNick");
+            }
+        }
+
+        private string _userPass;
+
+        public string UserPass
+        {
+            get { return _userPass; }
+            set
+            {
+                _userPass = value;
+                logInfo.Nick = _userPass;
+                OnPropertyChanged("UserPass");
+            }
+        }
+
         public LogInWindow LogInWindow { get; set; }
         public LogInViewModel()
         {
@@ -20,5 +54,11 @@ namespace CarePlant.ViewModels
         }
         public UserInterfaceCommand UserInterfaceSectionCommand => new UserInterfaceCommand(LogInWindow);
 
+
+        private void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

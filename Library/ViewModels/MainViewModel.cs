@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CarePlant.ViewModels
 {
-   public class MainViewModel:BaseViewModel
+   public class MainViewModel:INotifyPropertyChanged
     {
         public MainWindow MainWindow { get; set; }
         public MainViewModel(MainWindow MainWindow)

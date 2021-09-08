@@ -4,10 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarePlant.Views"
+        xmlns:vm="clr-namespace:CarePlant.ViewModels"
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="CarePlant.Views.LogInWindow"
         mc:Ignorable="d"
         Title="LogInsWindow" Height="600" Width="800" AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" WindowStartupLocation="CenterScreen">
+
+    <Control.Resources>
+        <vm:LogInViewModel x:Key="logInViewModel"/>
+    </Control.Resources>
+
+    <Window.DataContext>
+        <vm:LogInViewModel x:Name="logInViewModel"/>
+    </Window.DataContext>
+
     <Grid>
         <Canvas>
             <Grid>
@@ -81,8 +91,8 @@
             <Label Width="115" Height="35" Content="Nickname" FontSize="16" Foreground="DarkGreen"
                                    Canvas.Left="242" Canvas.Top="188"/>
             <Label Width="115"  Height="35" Content="Password" FontSize="16" Foreground="DarkGreen" Canvas.Left="242" Canvas.Top="260" RenderTransformOrigin="0.881,0.483"/>
-            <TextBox Width="140" RenderTransformOrigin="2.664,6.163" Height="30" Canvas.Left="383" Canvas.Top="188"/>
-            <TextBox Width="140" Height="30" Canvas.Left="383" Canvas.Top="265"/>
+            <TextBox x:Name="usernick" Text="{Binding UserNick}" Width="140" RenderTransformOrigin="2.664,6.163" Height="30" Canvas.Left="383" Canvas.Top="188"/>
+            <TextBox x:Name="userpass" Text="{Binding UserPass}" Width="140" Height="30" Canvas.Left="383" Canvas.Top="265"/>
             <Ellipse Width="65" Height="28" Fill="ForestGreen" RenderTransformOrigin="0.5,0.5" Canvas.Top="368">
                 <Ellipse.RenderTransform>
                     <TransformGroup>

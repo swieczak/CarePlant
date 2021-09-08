@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CarePlant.ViewModels
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public class INotifyPropertyChanged : System.ComponentModel.INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(PropertyChangedEventArgs e)

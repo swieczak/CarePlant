@@ -12,7 +12,7 @@ namespace CarePlant.ViewModels
     using System.Windows.Input;
     using Model;
     using ViewModels.BaseClass;
-    public class SignInViewModel : INotifyPropertyChanged
+    public class SignInViewModel : System.ComponentModel.INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private Model.DAL.DataAccess dataAccess = new Model.DAL.DataAccess();

@@ -11,7 +11,7 @@ namespace CarePlant.ViewModels
     using Model.DAL;
     using System.ComponentModel;
     using ViewModels.BaseClass;
-    public class PlantViewModel:INotifyPropertyChanged
+    public class PlantViewModel: System.ComponentModel.INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

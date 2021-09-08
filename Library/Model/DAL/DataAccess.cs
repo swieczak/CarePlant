@@ -99,7 +99,7 @@ namespace CarePlant.Model.DAL
         }
 
 
-        public bool logging(LoginInfo loginInfo)
+        public bool logging(LogInInfo loginInfo)
         {
             bool signed = false;
 
