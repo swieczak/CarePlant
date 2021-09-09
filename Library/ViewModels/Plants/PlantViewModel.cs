@@ -16,8 +16,17 @@ namespace CarePlant.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         private DataAccess dataAccess;
+
+        private List<Family> families;
         private Family currentFamily;
+
         private List<Species> species;
+        private Species currentSpecies;
+
+        private List<Flower> flowers;
+        private Flower currentFlower;
+
+        private String currentName;
 
         public PlantViewModel()
         {
@@ -29,7 +38,11 @@ namespace CarePlant.ViewModels
         {
             get
             {
-                return dataAccess.getFamilies();
+                if( families == null)
+                {
+                    families = dataAccess.getFamilies();
+                }
+                return families;
             }
         }
 
@@ -40,8 +53,8 @@ namespace CarePlant.ViewModels
             {
                 currentFamily = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentFamily)));
-                Console.WriteLine("currentFamily set");
                 Species = dataAccess.getSpecies(currentFamily.ID);
+                Console.WriteLine("currentFamily set");
             }
         }
                 
@@ -61,10 +74,147 @@ namespace CarePlant.ViewModels
                 Console.WriteLine("Species set");
             }
         }
+       // /*
+        public Species CurrentSpecies
+        {
+            get { return currentSpecies; }
+            set
+            {
+                currentSpecies = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentSpecies)));
+                Console.WriteLine("currentSpecies set");
+            }
+        }
 
 
 
+        public List<Flower> Flowers
+        {
+            get
+            {
+                if (flowers == null)
+                {
+                    flowers = dataAccess.GetFlowers(LogInViewModel.logInfo);
+                }
+                return flowers;
+            }
+            set
+            {
+                flowers = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Flowers)));
+            }
+        }
 
+        public String CurrentName
+        {
+            get { return currentName; }
+            set
+            {
+                currentName = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentName)));
+                Console.WriteLine("currentName set");
+            }
+        }
+
+
+        public Flower CurrentFlower
+        {
+            get { return currentFlower; }
+            set
+            {
+                currentFlower = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CurrentFlower)));
+                Console.WriteLine("currentFlower set");
+                if (currentFlower != null)
+                { 
+                    foreach(Family fam in families)
+                    {
+                        if(currentFlower.Species.Family.ID == fam.ID)
+                        {
+                            Console.WriteLine("Found eqal fam");
+                            CurrentFamily = fam;
+                            //Species = dataAccess.getSpecies(currentFamily.ID);
+                        }
+                    }
+                    Console.WriteLine("Searching for eqal spec");
+
+                    CurrentName = currentFlower.Name;
+
+                    foreach (Species spec in species)
+                    {
+                        if (currentFlower.Species.ID == spec.ID)
+                        {
+                            Console.WriteLine("Found eqal spec");
+                            CurrentSpecies = spec;
+                        }
+                    }
+                }
+
+            }
+        }
+
+
+
+        private ICommand _add = null;
+        public ICommand Add
+        {
+            get
+            {
+                return _add ?? (_add = new BaseClass.RelayCommand(
+                    (p) => 
+                    { 
+                        dataAccess.AddFlower(LogInViewModel.logInfo, currentSpecies, currentName); 
+                        Flowers = dataAccess.GetFlowers(LogInViewModel.logInfo); 
+                    }
+                    ,
+                    p => true)
+                    );
+            }
+        }
+        private ICommand _del = null;
+        public ICommand Del
+        {
+            get
+            {
+                return _del ?? (_del = new BaseClass.RelayCommand(
+                    (p) =>
+                    {
+                        if (currentFlower != null)
+                        {
+                            dataAccess.DeleteFlower(currentFlower);
+                            Flowers = dataAccess.GetFlowers(LogInViewModel.logInfo);
+                        }
+                    }
+                    ,
+                    p => true)
+                    );
+            }
+        }
+        private ICommand _edi = null;
+        public ICommand Edi
+        {
+            get
+            {
+                return _edi ?? (_edi = new BaseClass.RelayCommand(
+                    (p) =>
+                    {
+                        if (currentFlower != null)
+                        {
+                            if (currentFlower.Name != currentName || currentFlower.Species != currentSpecies)
+                            {
+                                dataAccess.EditFlower(currentFlower, currentSpecies, currentName);
+                                Flowers = dataAccess.GetFlowers(LogInViewModel.logInfo);
+                            }
+                        }
+                    }
+                    ,
+                    p => true)
+                    );
+            }
+        }
+
+
+        // */
 
 
 

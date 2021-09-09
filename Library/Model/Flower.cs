@@ -6,25 +6,22 @@ using System.Threading.Tasks;
 
 namespace CarePlant.Model
 {
-    public class Species
-
+    public class Flower
     {
         public string Name { get; set; }
         public int ID { get; set; }
-        public Family Family { get; set; }
+        public Species Species { get; set; }
 
-
-        public Species(string name, int id, string familyName, int familyID )
+        public Flower(string name, int id, string species, int speciesID, string familyName, int familyID)
         {
             Name = name;
             ID = id;
-            Family = new Family (familyName, familyID);
-
+            Species = new Species(species, speciesID, familyName, familyID);
         }
 
         public override string ToString()
         {
-            return Name;
+            return $"{Name} ({Species})";
         }
 
     }

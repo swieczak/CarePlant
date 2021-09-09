@@ -30,7 +30,8 @@
                    FontSize="28"
                    HorizontalAlignment="Left"
                    Margin="0,0,0,10"/>
-            <ListView MinHeight="270" SelectionChanged="ListView_SelectionChanged" Height="270" Margin="0,0,0.4,0"/>
+            <ListView MinHeight="270" Height="270" Margin="0,0,0.4,0"
+                      ItemsSource="{Binding Flowers}" SelectedValue="{Binding CurrentFlower, Mode=TwoWay}" />
             <StackPanel Orientation="Horizontal" Margin="0,0,-249.6,0" Height="96">
                 <Border Width="55"
                     CornerRadius="10"
@@ -171,7 +172,7 @@
                    FontSize="20"
                    HorizontalAlignment="Right"
                    Margin="0,0,20,80"/>
-            <Button Margin="24,-60,19.8,0" Height="36">
+            <Button Margin="24,-60,19.8,0" Height="36" Command="{Binding Add}">
                 <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>
@@ -189,7 +190,7 @@
                            FontSize="20"/>
                 
             </Button>
-            <Button Margin="24,-6,19.8,0" Height="36">
+            <Button Margin="24,-6,19.8,0" Height="36" Command="{Binding Edi}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
@@ -205,7 +206,7 @@
                     Foreground="White"
                     FontSize="20"/>
             </Button>
-            <Button Margin="24,6,19.8,0" Height="36">
+            <Button Margin="24,6,19.8,0" Height="36" Command="{Binding Del}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
@@ -240,11 +241,13 @@
 
         <StackPanel Grid.Column="2">
             <ComboBox Margin="0,55,0,15" Name="FamilyCombo" 
-                      ItemsSource="{Binding Families}" SelectedValue="{Binding CurrentFamily, Mode=TwoWay}">
+                      ItemsSource="{Binding Families}" SelectedItem="{Binding CurrentFamily, Mode=TwoWay}">
                 
             </ComboBox>
-                <ComboBox Margin="0,0,0,15" Name="SpeciesCombo" ItemsSource="{Binding Species}"/>
-                <TextBox Margin="0,0,-0.2,80" Height="22"/>
+            <ComboBox Margin="0,0,0,15" Name="SpeciesCombo" 
+                      ItemsSource="{Binding Species}" SelectedItem="{Binding CurrentSpecies, Mode=TwoWay}" />
+            
+                <TextBox Margin="0,0,-0.2,80" Height="22" Text="{Binding CurrentName, Mode=TwoWay}"/>
         </StackPanel>
     </Grid>
 </UserControl>

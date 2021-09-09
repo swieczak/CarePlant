@@ -103,6 +103,7 @@
     <Compile Include="Commands\SignInSectionCommand.cs" />
     <Compile Include="Core\ObservableObjects.cs" />
     <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="Model\Flower.cs" />
     <Compile Include="Model\LogInInfo.cs" />
     <Compile Include="Model\SignInfo.cs" />
     <Compile Include="Model\Species.cs" />

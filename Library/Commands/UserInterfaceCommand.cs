@@ -32,7 +32,8 @@ namespace CarePlant.Commands
             UserInterface Userinterface = new UserInterface(UserInterfaceViewModel);
 
             LogInViewModel.logInfo.ID = DataAccess.logging(LogInViewModel.logInfo);
-            if(LogInViewModel.logInfo.ID != 0)
+            LogInViewModel.logInfo.Password = "";
+            if (LogInViewModel.logInfo.ID != 0)
             {
                 //LoginWindow.Close();
                 Userinterface.ShowDialog();
