@@ -109,6 +109,7 @@
     <Compile Include="Model\Species.cs" />
     <Compile Include="Model\DAL\DataAccess.cs" />
     <Compile Include="Model\Family.cs" />
+    <Compile Include="Model\Todo.cs" />
     <Compile Include="ViewModels\Actions\ActionViewModel.cs" />
     <Compile Include="ViewModels\BaseClass\RealyCommand.cs" />
     <Compile Include="ViewModels\BaseClass\ViewModelBase.cs" />

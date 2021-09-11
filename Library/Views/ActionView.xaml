@@ -4,9 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CarePlant.Views"
+             xmlns:vm="clr-namespace:CarePlant.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="414" d:DesignWidth="500">
-    <Grid>
+    <Control.Resources>
+        <vm:ActionViewModel x:Key="actionViewModel"/>
+    </Control.Resources>
+    <Grid DataContext="{StaticResource actionViewModel}" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
             <ColumnDefinition Width="200"/>
@@ -21,7 +25,7 @@
                    FontSize="28"
                    HorizontalAlignment="Left"
                    Margin="0,0,0,10"/>
-            <ListView MinHeight="150"/>
+            <ListView MinHeight="150" ItemsSource="{Binding UrgentTodos}"/>
         </StackPanel>
         <Border Grid.Row="0" 
                 Grid.Column="1"
@@ -53,7 +57,7 @@
                    FontSize="28"
                    HorizontalAlignment="Left"
                    Margin="0,0,0,10"/>
-            <ListView MinHeight="150"/>
+            <ListView MinHeight="150" ItemsSource="{Binding SoonTodos}"/>
         </StackPanel>
         
         <Border Grid.Row="1" 

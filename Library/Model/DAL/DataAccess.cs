@@ -153,8 +153,31 @@ namespace CarePlant.Model.DAL
             return Flowers;
         }
 
+        public List<Todo> GetToDoList(LogInInfo loginInfo)
+        {
+            List<Todo> Todos = new List<Todo>();
+            using(connection = new MySqlConnection(connStringBuilder.ToString()))
+            {
+                MySqlCommand command1 = new MySqlCommand($"SELECT * FROM todosy WHERE fk_osoby ={loginInfo.ID} ORDER BY ost_wykonanie", connection);
+
+                connection.Open();
+                var dataReader = command1.ExecuteReader();
+                if (dataReader.HasRows)
+                {
+                    while (dataReader.Read())
+                        Todos.Add(new Todo((int)dataReader["id_akcji"], dataReader["opis_akcji"].ToString(),(int)dataReader["id_zestaw"], dataReader["nazwa"].ToString(),
+                            (DateTime)dataReader["ost_wykonanie"], (int)dataReader["kiedy_wykonac"] ));
+                }
+                connection.Close();
+            }
+
+            return Todos;
+        }
+        
         public bool AddFlower(LogInInfo loginInfo, Species species, String name)
         {
+            if (species == null || name == null || name == "")
+                return false;
             using (connection = new MySqlConnection(connStringBuilder.ToString()))
             {
                 MySqlCommand command1 = new MySqlCommand($"SELECT * FROM `kto_ma_co` WHERE `fk_osoby` = {loginInfo.ID} AND `fk_kwiat` = { species.ID} AND `nazwa` = '{name}'", connection); //OR `imie` = {signInfo.Name} OR `nazwisko` = {signInfo.Surname}", connection);
