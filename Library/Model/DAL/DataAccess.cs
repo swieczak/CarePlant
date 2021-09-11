@@ -25,7 +25,7 @@ namespace CarePlant.Model.DAL
             connStringBuilder.UserID = "root";
             connStringBuilder.Password = "";
             connStringBuilder.Server = "localhost";
-            connStringBuilder.Database = "kwiotki";
+            connStringBuilder.Database = "kwiotki3";
             connStringBuilder.Port = 3306;
 
         }
@@ -123,6 +123,10 @@ namespace CarePlant.Model.DAL
                 {
                     dataReader.Read();
                     signed = (int)dataReader["id_osoby"];
+                }
+                else
+                {
+                    System.Windows.MessageBox.Show("Nieudane logowanie!");
                 }
                 connection.Close();
             }

@@ -24,35 +24,57 @@
             </StackPanel.Resources>
             <StackPanel Orientation="Horizontal"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Height="217">
+        <StackPanel Height="46">
+            <TextBlock
+                   Foreground="DarkGreen"
+                   FontSize="18"
+                   HorizontalAlignment="Left"
+                   Margin="5,10,0,20"><Run Text="Your plants:"/></TextBlock>
+            <TextBlock
+                   Foreground="DarkGreen"
+                   FontSize="18"
+                   HorizontalAlignment="Left"
+                   Margin="220,-45,0,20"><Run Text="Actions to do:"/></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="152">
             <Border Width="180"
-                    Height="150"
-                    CornerRadius="20" Margin="0,41,0,21">
+                    CornerRadius="20" Margin="0,0,0,0">
+
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                         <GradientStop Color="Aquamarine" Offset="0.0"/>
                         <GradientStop Color="LightSeaGreen" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
+                
                 <Grid>
                     <StackPanel Margin="0,0,0,0.4">
-                        <TextBlock Text=""
-                                   Foreground="FloralWhite"
-                                   FontSize="28"
-                                   Margin="20,10,10,0"/>
+                        <TextBlock
+                   Foreground="DarkGreen"
+                   FontSize="50"
+                   HorizontalAlignment="Center"
+                   Margin="0,40,0,0"><Run Text="5"/></TextBlock>
                     </StackPanel>
                 </Grid>
             </Border>
             <Border Width="180"
-                    Height="150"
                     CornerRadius="20"
-                    Margin="40,41,0,21">
+                    Margin="40,0,0,0">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                         <GradientStop Color="LawnGreen" Offset="0.0"/>
                         <GradientStop Color="ForestGreen" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
+                <Grid>
+                    <StackPanel Margin="0,0,0,0.4">
+                        <TextBlock
+                   Foreground="DarkGreen"
+                   FontSize="50"
+                   HorizontalAlignment="Center"
+                   Margin="0,40,0,0"><Run Text="5"/></TextBlock>
+                    </StackPanel>
+                </Grid>
             </Border>
         </StackPanel>
         <Button HorizontalAlignment="Left" Height="56" Margin="123,30,0,0" Width="147">
@@ -71,6 +93,7 @@
                            Foreground="White"
                            FontSize="20"/>
         </Button>
+        <StackPanel HorizontalAlignment="Left" Height="28" Width="400"/>
 
     </StackPanel>
 </UserControl>

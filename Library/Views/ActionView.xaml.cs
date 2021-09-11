@@ -24,7 +24,9 @@ namespace CarePlant.Views
         public ActionView()
         {
             InitializeComponent();
+
         }
 
+       
     }
 }

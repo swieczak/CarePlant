@@ -31,7 +31,9 @@
                    HorizontalAlignment="Left"
                    Margin="0,0,0,10"/>
             <ListView MinHeight="270" Height="270" Margin="0,0,0.4,0"
-                      ItemsSource="{Binding Flowers}" SelectedValue="{Binding CurrentFlower, Mode=TwoWay}" />
+                      ItemsSource="{Binding Flowers}" SelectedValue="{Binding CurrentFlower, Mode=TwoWay}">
+         
+            </ListView>
             <StackPanel Orientation="Horizontal" Margin="0,0,-249.6,0" Height="96">
                 <Border Width="55"
                     CornerRadius="10"

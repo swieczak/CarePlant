@@ -20,12 +20,14 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel>
-            <TextBlock Text="Urgente"
+            <TextBlock Text="Urgent"
                    Foreground="DarkGreen"
                    FontSize="28"
                    HorizontalAlignment="Left"
                    Margin="0,0,0,10"/>
-            <ListView MinHeight="150" ItemsSource="{Binding UrgentTodos}"/>
+            <ListBox MinHeight="150" ItemsSource="{Binding UrgentTodos}">
+
+            </ListBox>
         </StackPanel>
         <Border Grid.Row="0" 
                 Grid.Column="1"

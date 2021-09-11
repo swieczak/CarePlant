@@ -117,6 +117,7 @@
     <Compile Include="ViewModels\Hub\HubViewModel.cs" />
     <Compile Include="ViewModels\Login\LogInViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\MyPlantViewModel.cs" />
     <Compile Include="ViewModels\Plants\PlantViewModel.cs" />
     <Compile Include="ViewModels\UserInterfaceViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
@@ -125,6 +126,9 @@
     </Compile>
     <Compile Include="Views\HubView.xaml.cs">
       <DependentUpon>HubView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyPlantWindow.xaml.cs">
+      <DependentUpon>MyPlantWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PlantView.xaml.cs">
       <DependentUpon>PlantView.xaml</DependentUpon>
@@ -149,6 +153,10 @@
     <Page Include="Views\HubView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MyPlantWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\PlantView.xaml">
       <SubType>Designer</SubType>
