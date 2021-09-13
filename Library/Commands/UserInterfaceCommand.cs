@@ -30,6 +30,8 @@ namespace CarePlant.Commands
         {
             UserInterfaceViewModel UserInterfaceViewModel = new UserInterfaceViewModel();
             UserInterface Userinterface = new UserInterface(UserInterfaceViewModel);
+            WarningViewModel WarningViewModel = new WarningViewModel();
+            Warning Warning = new Warning(WarningViewModel);
 
             LogInViewModel.logInfo.ID = DataAccess.logging(LogInViewModel.logInfo);
             LogInViewModel.logInfo.Password = "";
@@ -38,11 +40,11 @@ namespace CarePlant.Commands
                 //LoginWindow.Close();
                 Userinterface.ShowDialog();
             }
-
-
-
-
-
+            else 
+            {
+                WarningViewModel.ErrorText = "Dane logowania nie są poprawne";
+                Warning.ShowDialog();
+            }
         }
     }
 }
