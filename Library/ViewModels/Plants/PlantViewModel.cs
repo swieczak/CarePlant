@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using CarePlant.Commands;
+
 
 namespace CarePlant.ViewModels
 {
+    using CarePlant.Views;
     using Model;
     using Model.DAL;
     using System.ComponentModel;
@@ -27,7 +30,6 @@ namespace CarePlant.ViewModels
         private Flower currentFlower;
 
         private String currentName;
-
         public PlantViewModel()
         {
             dataAccess = new DataAccess();
@@ -152,8 +154,6 @@ namespace CarePlant.ViewModels
 
             }
         }
-
-
 
         private ICommand _add = null;
         public ICommand Add

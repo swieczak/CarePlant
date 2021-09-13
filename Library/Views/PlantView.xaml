@@ -10,7 +10,7 @@
              xmlns:local="clr-namespace:CarePlant.Views"
              mc:Ignorable="d" 
              xmlns:vm="clr-namespace:CarePlant.ViewModels"
-             d:DesignHeight="414" d:DesignWidth="500">
+             d:DesignHeight="480" d:DesignWidth="500">
     <Control.Resources>
         <vm:PlantViewModel x:Key="plantViewModel"/>
     </Control.Resources>
@@ -22,9 +22,10 @@
             <ColumnDefinition Width="125"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition Height="26*"/>
+            <RowDefinition Height="43*"/>
         </Grid.RowDefinitions>
-        <StackPanel>
+        <StackPanel Margin="0,0,0.4,0.4" Grid.RowSpan="2">
             <TextBlock Text="Your plants"
                    Foreground="DarkGreen"
                    FontSize="28"
@@ -32,7 +33,7 @@
                    Margin="0,0,0,10"/>
             <ListView MinHeight="270" Height="270" Margin="0,0,0.4,0"
                       ItemsSource="{Binding Flowers}" SelectedValue="{Binding CurrentFlower, Mode=TwoWay}">
-         
+
             </ListView>
             <StackPanel Orientation="Horizontal" Margin="0,0,-249.6,0" Height="96">
                 <Border Width="55"
@@ -44,7 +45,7 @@
                             <GradientStop Color="Blue" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
-                    <Button Content="&#xf043;" FontFamily="{StaticResource FontAwesome}" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Height="57" VerticalAlignment="Top" Width="55" Margin="0,0,0,-0.2">
+                    <Button Content="&#xf043;"  FontFamily="{StaticResource FontAwesome}" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Height="57" VerticalAlignment="Top" Width="55" Margin="0,0,0,-0.2">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="10"/>
@@ -62,7 +63,7 @@
                         </LinearGradientBrush>
                     </Border.Background>
                     <Button Content="&#xf2cc;" FontFamily="{StaticResource FontAwesome}" Background="Transparent" BorderThickness="0" Height="57" Margin="0,0,-0.2,-0.2" VerticalAlignment="Top">
-                    <Button.Resources>
+                        <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="10"/>
                             </Style>
@@ -80,11 +81,11 @@
                     </Border.Background>
                     <Button Content="&#xf242;" FontFamily="{StaticResource FontAwesome}" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0"  Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2">
                         <Button.Resources>
-                                <Style TargetType="{x:Type Border}">
-                                    <Setter Property="CornerRadius" Value="10"/>
-                                </Style>
-                            </Button.Resources>
-                        </Button>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
                 </Border>
                 <Border Width="53"
                     CornerRadius="10"
@@ -97,11 +98,11 @@
                     </Border.Background>
                     <Button Content="&#xf079;" FontFamily="{StaticResource FontAwesome}" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Height="57" Margin="0,0,-0.2,-0.2" VerticalAlignment="Top" Width="53">
                         <Button.Resources>
-                                <Style TargetType="{x:Type Border}">
-                                    <Setter Property="CornerRadius" Value="10"/>
-                                </Style>
-                            </Button.Resources>
-                        </Button>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
                 </Border>
                 <Border Width="53"
                     CornerRadius="10"
@@ -114,11 +115,11 @@
                     </Border.Background>
                     <Button Content="&#xf0a3;" FontFamily="{StaticResource FontAwesome}" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2">
                         <Button.Resources>
-                                <Style TargetType="{x:Type Border}">
-                                    <Setter Property="CornerRadius" Value="10"/>
-                                </Style>
-                            </Button.Resources>
-                        </Button>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
                 </Border>
                 <Border Width="53"
                     CornerRadius="10"
@@ -131,11 +132,11 @@
                     </Border.Background>
                     <Button Content="&#xf299;" FontFamily="{StaticResource FontAwesome}" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2">
                         <Button.Resources>
-                                <Style TargetType="{x:Type Border}">
-                                    <Setter Property="CornerRadius" Value="10"/>
-                                </Style>
-                            </Button.Resources>
-                        </Button>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
                 </Border>
                 <Border Width="53"
                     CornerRadius="10"
@@ -148,17 +149,19 @@
                     </Border.Background>
                     <Button Content="&#xf185;" FontFamily="{StaticResource FontAwesome}" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2">
                         <Button.Resources>
-                                <Style TargetType="{x:Type Border}">
-                                    <Setter Property="CornerRadius" Value="10"/>
-                                </Style>
-                            </Button.Resources>
-                        </Button>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="10"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
                 </Border>
 
+
             </StackPanel>
+            <TextBlock FontSize="10" HorizontalAlignment="Left" Foreground="ForestGreen" Height="28" Margin="0,0,-249.6,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="500"><Run Text="  "/><Run Text="  "/><Run Text=" Watering    "/><Run Text="     "/><Run Text="Moisturize      "/><Run Text="    "/><Run Text="Subsoil     "/><Run Text="    "/><Run Text=" Fertilization   "/><Run Text="   "/><Run Text="Cut Flowers  "/><Run Text="     "/><Run Text="Cut Leaves      "/><Run Text="    "/><Run Text="Position"/></TextBlock>
         </StackPanel>
 
-        <StackPanel Grid.ColumnSpan="2" Margin="250,0,0.2,113.4" >
+        <StackPanel Grid.ColumnSpan="2" Margin="250,0,0.2,113.4" Grid.RowSpan="2" >
             <TextBlock Text="Family:"
                    Foreground="DarkGreen"
                    FontSize="20"
@@ -176,10 +179,10 @@
                    Margin="0,0,20,80"/>
             <Button Margin="24,-60,19.8,0" Height="36" Command="{Binding Add}">
                 <Button.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="10"/>
-                        </Style>
-                    </Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
                 <Button.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                         <GradientStop Color="ForestGreen" Offset="0.0"/>
@@ -190,7 +193,7 @@
                     x:Name="add" Text="&#xf0fe;"  FontFamily="{StaticResource FontAwesome}"
                            Foreground="White"
                            FontSize="20"/>
-                
+
             </Button>
             <Button Margin="24,-6,19.8,0" Height="36" Command="{Binding Edi}">
                 <Button.Resources>
@@ -241,15 +244,32 @@
         </StackPanel>
 
 
-        <StackPanel Grid.Column="2">
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Margin="124.6,0,0,0.4" Grid.RowSpan="2">
             <ComboBox Margin="0,55,0,15" Name="FamilyCombo" 
                       ItemsSource="{Binding Families}" SelectedItem="{Binding CurrentFamily, Mode=TwoWay}">
-                
+
             </ComboBox>
             <ComboBox Margin="0,0,0,15" Name="SpeciesCombo" 
                       ItemsSource="{Binding Species}" SelectedItem="{Binding CurrentSpecies, Mode=TwoWay}" />
-            
-                <TextBox Margin="0,0,-0.2,80" Height="22" Text="{Binding CurrentName, Mode=TwoWay}"/>
+
+            <TextBox Margin="0,0,-0.2,80" Height="22" Text="{Binding CurrentName, Mode=TwoWay}"/>
+            <Button Margin="24,-40,21.8,0" Height="76" Command="">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="ForestGreen" Offset="0.0"/>
+                        <GradientStop Color="DarkGreen" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <TextBlock Text="&#xf06e;"  FontFamily="{StaticResource FontAwesome}"
+                           Foreground="White"
+                           FontSize="30"/>
+
+            </Button>
         </StackPanel>
     </Grid>
 </UserControl>
