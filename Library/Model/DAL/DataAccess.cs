@@ -23,9 +23,9 @@ namespace CarePlant.Model.DAL
             connStringBuilder = new MySqlConnectionStringBuilder();
 
             connStringBuilder.UserID = "root";
-            connStringBuilder.Password = "Kulka2012!";
+            connStringBuilder.Password = "";
             connStringBuilder.Server = "localhost";
-            connStringBuilder.Database = "kwiotki3";
+            connStringBuilder.Database = "kwiotki";
             connStringBuilder.Port = 3306;
 
         }
