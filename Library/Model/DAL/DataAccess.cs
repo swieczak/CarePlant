@@ -123,10 +123,10 @@ namespace CarePlant.Model.DAL
                     dataReader.Read();
                     signed = (int)dataReader["id_osoby"];
                 }
-                else
+                /*else
                 {
                     System.Windows.MessageBox.Show("Nieudane logowanie!");
-                }
+                }*/
                 connection.Close();
             }
             return signed;

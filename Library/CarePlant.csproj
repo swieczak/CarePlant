@@ -121,6 +121,7 @@
     <Compile Include="ViewModels\Plants\PlantViewModel.cs" />
     <Compile Include="ViewModels\UserInterfaceViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
+    <Compile Include="ViewModels\WarningViewModel.cs" />
     <Compile Include="Views\ActionView.xaml.cs">
       <DependentUpon>ActionView.xaml</DependentUpon>
     </Compile>
@@ -141,6 +142,9 @@
     </Compile>
     <Compile Include="Views\UserInterface.xaml.cs">
       <DependentUpon>UserInterface.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Warning.xaml.cs">
+      <DependentUpon>Warning.xaml</DependentUpon>
     </Compile>
     <Page Include="GeneralDictionary.xaml">
       <SubType>Designer</SubType>
@@ -184,6 +188,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserInterface.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Warning.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
