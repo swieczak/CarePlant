@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//using CarePlant.Model.DAL;
+
+using CarePlant.Model.DAL;
 
 namespace CarePlant.Model
 {
@@ -25,20 +28,36 @@ namespace CarePlant.Model
             nastWyk = NastWyk;
         }
 
-        public DateTime Next()
+        public DateTime next()
         {
             return ostWyk.AddDays(nastWyk).Date;
         }
 
         public override string ToString()
         {
-            return $"{nazwaKwiat}: {nazwaAkcji}, {this.Next().ToString("dd.MM.yyyy r.")}";
+            return $"{nazwaKwiat}: {nazwaAkcji}, {this.next().ToString("dd.MM.yyyy r.")}";
         }
 
         public bool isUrgent()
         {
             int result = DateTime.Compare(ostWyk.AddDays(nastWyk), DateTime.Today.Date);
             return (result < 0);
+        }
+
+        public void Perform()
+        {
+            DataAccess dataAccess = new DataAccess();
+            dataAccess.Perform(this.idKwiat, this.idAkcji);
+
+            int result = DateTime.Compare(ostWyk.AddDays(nastWyk), DateTime.Today.Date);
+            if(result > 0)
+                dataAccess.Delay(this.idKwiat, this.idAkcji, (this.nastWyk + DateTime.Compare(ostWyk, DateTime.Today.Date)));
+        }
+
+        public void Delay()
+        {
+            DataAccess dataAccess = new DataAccess();
+            dataAccess.Delay(this.idKwiat, this.idAkcji, (this.nastWyk+ (int)(nastWyk/2)));
         }
 
     }

@@ -25,7 +25,7 @@ namespace CarePlant.Model.DAL
             connStringBuilder.UserID = "root";
             connStringBuilder.Password = "";
             connStringBuilder.Server = "localhost";
-            connStringBuilder.Database = "kwiotki3";
+            connStringBuilder.Database = "kwiotki";
             connStringBuilder.Port = 3306;
 
         }
@@ -228,6 +228,30 @@ namespace CarePlant.Model.DAL
                 connection.Close();
             }
             return true;
+        }
+
+        public void Perform(int flowerID, int actionID)
+        {
+            using (connection = new MySqlConnection(connStringBuilder.ToString()))
+            {
+                MySqlCommand command = new MySqlCommand($"INSERT INTO `dzienniki_akcji` ( `fk_akcji`, `fk_zestaw`) VALUES ('{actionID}', '{flowerID}');", connection);
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+
+        }
+
+        public void Delay(int flowerID, int actionID, int interval)
+        {
+            using (connection = new MySqlConnection(connStringBuilder.ToString()))
+            {
+                MySqlCommand command = new MySqlCommand($"UPDATE `zadania` SET `kiedy_wykonac` = {interval} WHERE fk_zestaw = {flowerID} AND fk_akcji = {actionID};", connection);
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+
         }
 
     }

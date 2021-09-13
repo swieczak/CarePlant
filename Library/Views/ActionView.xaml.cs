@@ -27,6 +27,16 @@ namespace CarePlant.Views
 
         }
 
-       
+        private void urgentList_Selected(object sender, RoutedEventArgs e)
+        {
+            if(urgentList.SelectedItem != null)
+            soonList.UnselectAll();
+        }
+
+        private void soonList_Selected(object sender, RoutedEventArgs e)
+        {
+            if (soonList.SelectedItem != null)
+                urgentList.UnselectAll();
+        }
     }
 }

@@ -3,10 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:CarePlant.ViewModels"
              xmlns:local="clr-namespace:CarePlant.Views"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="400">
-    <StackPanel Margin="0,0,0,25">
+    <Control.Resources>
+        <vm:HubViewModel x:Key="hubViewModel"/>
+    </Control.Resources>
+    <StackPanel Margin="0,0,0,25" DataContext="{StaticResource hubViewModel}">
 
 
         <TextBlock
@@ -50,10 +54,10 @@
                 <Grid>
                     <StackPanel Margin="0,0,0,0.4">
                         <TextBlock
-                   Foreground="DarkGreen"
-                   FontSize="50"
+                   Foreground="White"
+                   FontSize="80"
                    HorizontalAlignment="Center"
-                   Margin="0,40,0,0"><Run Text="5"/></TextBlock>
+                   Margin="0,20,0,0"><Run Text="{Binding Flowers.Count, Mode=OneWay}"/></TextBlock>
                     </StackPanel>
                 </Grid>
             </Border>
@@ -69,15 +73,15 @@
                 <Grid>
                     <StackPanel Margin="0,0,0,0.4">
                         <TextBlock
-                   Foreground="DarkGreen"
-                   FontSize="50"
+                   Foreground="White"
+                   FontSize="80"
                    HorizontalAlignment="Center"
-                   Margin="0,40,0,0"><Run Text="5"/></TextBlock>
+                   Margin="0,20,0,0"><Run Text="{Binding Todos.Count, Mode=OneWay}"/></TextBlock>
                     </StackPanel>
                 </Grid>
             </Border>
         </StackPanel>
-        <Button HorizontalAlignment="Left" Height="56" Margin="123,30,0,0" Width="147">
+        <Button HorizontalAlignment="Left" Height="56" Margin="123,30,0,0" Width="147" Command="{Binding PerformAll}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>

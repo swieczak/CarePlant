@@ -25,7 +25,8 @@
                    FontSize="28"
                    HorizontalAlignment="Left"
                    Margin="0,0,0,10"/>
-            <ListBox MinHeight="150" ItemsSource="{Binding UrgentTodos}">
+            <ListBox MinHeight="150" ItemsSource="{Binding UrgentTodos}" x:Name="urgentList" 
+                     SelectedValue="{Binding SelectedTodo, Mode=OneWayToSource}" SelectionChanged="urgentList_Selected">
 
             </ListBox>
         </StackPanel>
@@ -35,7 +36,7 @@
                 Width="150" 
                 Height="50"
                 Margin="0,30,0,0">
-            <Button>
+            <Button Command="{Binding Perform}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
@@ -59,7 +60,8 @@
                    FontSize="28"
                    HorizontalAlignment="Left"
                    Margin="0,0,0,10"/>
-            <ListView MinHeight="150" ItemsSource="{Binding SoonTodos}"/>
+            <ListView MinHeight="150" x:Name="soonList" ItemsSource="{Binding SoonTodos}" 
+                      SelectedValue="{Binding SelectedTodo, Mode=OneWayToSource}" SelectionChanged="soonList_Selected" />
         </StackPanel>
         
         <Border Grid.Row="1" 
@@ -68,7 +70,7 @@
                 Width="150" 
                 Height="50"
                 Margin="0,30,0,0">
-            <Button>
+            <Button Command="{Binding Delay}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
