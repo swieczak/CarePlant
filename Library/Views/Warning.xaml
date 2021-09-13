@@ -11,12 +11,16 @@
 
 
     <Window.DataContext>
-        <vm:WarningViewModel/>
+        <vm:WarningViewModel x:Name="warningViewModel"/>
     </Window.DataContext>
+
+    <Control.Resources>
+        <vm:WarningViewModel x:Key="warningViewModel"/>
+    </Control.Resources>
 
 
     <Border Background="FloralWhite" CornerRadius="20" BorderBrush="ForestGreen" BorderThickness="3" >
-        <StackPanel>
+        <StackPanel DataContext="{StaticResource warningViewModel}">
             <Label Content="{Binding ErrorText}" Margin="10 20 10 10" FontSize="16"/>
             <Button x:Name="WarningACK" Margin="100 50 100 10"
                     Click="ACK">

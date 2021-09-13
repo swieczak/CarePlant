@@ -20,11 +20,11 @@ namespace CarePlant.Views
     /// </summary>
     public partial class Warning : Window
     {
-        public WarningViewModel warningViewModel{ get; set; }
+        public WarningViewModel WarningViewModel{ get; set; }
         public Warning(WarningViewModel WarningViewModel)
         {
             InitializeComponent();
-            this.warningViewModel = WarningViewModel;
+            this.WarningViewModel = WarningViewModel;
             DataContext = WarningViewModel;
         }
         private void ACK(object sender, RoutedEventArgs e)
