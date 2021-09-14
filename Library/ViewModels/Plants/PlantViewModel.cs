@@ -27,9 +27,11 @@ namespace CarePlant.ViewModels
         private Species currentSpecies;
 
         private List<Flower> flowers;
-        private Flower currentFlower;
+        public static Flower currentFlower;
 
         private String currentName;
+
+
         public PlantViewModel()
         {
             dataAccess = new DataAccess();
@@ -268,10 +270,32 @@ namespace CarePlant.ViewModels
         }
 
 
-        // */
+        // */  //////////////////////////////////////////// DETAILS
+
+       
+
+
+        private ICommand _det = null;
+        public ICommand Det
+        {
+            get
+            {
+                return _det ?? (_det = new BaseClass.RelayCommand(
+                    (p) =>
+                    {
+                        MyPlantViewModel MyPlantViewModel = new MyPlantViewModel();
+                        MyPlantWindow Details = new MyPlantWindow(MyPlantViewModel);
+
+                        Details.ShowDialog();
 
 
 
+                    }
+                    ,
+                    p => true)
+                    );
+            }
+        }
 
 
 

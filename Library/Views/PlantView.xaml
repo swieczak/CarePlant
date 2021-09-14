@@ -267,7 +267,7 @@
                       ItemsSource="{Binding Species}" SelectedItem="{Binding CurrentSpecies, Mode=TwoWay}" />
 
             <TextBox Margin="0,0,-0.2,80" Height="22" Text="{Binding CurrentName, Mode=TwoWay}"/>
-            <Button Margin="24,-40,21.8,0" Height="76" Command="" BorderBrush="{x:Null}">
+            <Button Margin="24,-40,21.8,0" Height="76" Command="{Binding Det}" BorderBrush="{x:Null}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
