@@ -73,6 +73,15 @@ namespace CarePlant.ViewModels
             }
         }
 
+        private bool isEmpty() 
+        {
+            if (signInfo.Name == "" || signInfo.Nick == "" || signInfo.Password == "" || signInfo.Surname == "")
+            {
+                return true;
+            }
+            else return false;
+        }
+
         private ICommand _signing = null;
 
         //Wlasnosc typu ICommand reprezentującą polecenie,
@@ -88,7 +97,10 @@ namespace CarePlant.ViewModels
                 return _signing ?? (_signing = new BaseClass.RelayCommand(
                     //co wykonuje polecenie
                     //które należy sprecyzować w dalszej części działania
-                    (p) => { dataAccess.signing(signInfo); }
+                    (p) => {
+                        if (isEmpty()) DialogBox.Show("Please, fill any empty spaces left");
+                        else dataAccess.signing(signInfo);
+                    }
                     ,
                     //warunek kiedy może je wykonać
                     p => true)

@@ -114,6 +114,7 @@
     <Compile Include="ViewModels\BaseClass\RealyCommand.cs" />
     <Compile Include="ViewModels\BaseClass\ViewModelBase.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\DialogBox.cs" />
     <Compile Include="ViewModels\Hub\HubViewModel.cs" />
     <Compile Include="ViewModels\Login\LogInViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

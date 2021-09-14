@@ -35,15 +35,20 @@ namespace CarePlant.Commands
 
             LogInViewModel.logInfo.ID = DataAccess.logging(LogInViewModel.logInfo);
             LogInViewModel.logInfo.Password = "";
-            if (LogInViewModel.logInfo.ID != 0)
+            if (LogInViewModel.logInfo.ID != 0 && LogInViewModel.logInfo.Nick!="" && LogInViewModel.logInfo.Password!="")
             {
                 //LoginWindow.Close();
                 Userinterface.ShowDialog();
             }
+            else if(LogInViewModel.logInfo.Nick == "" && LogInViewModel.logInfo.Password == "")
+            {
+                DialogBox.Show("Nor nick, nor password cannot be empty!");
+            }
             else 
             {
-                WarningViewModel.ErrorText = "Dane logowania nie są poprawne";
-                Warning.ShowDialog();
+                DialogBox.Show("Password or (and) nick are incorrect");
+                //WarningViewModel.ErrorText = "Dane logowania nie są poprawne";
+                //Warning.ShowDialog();
             }
         }
     }
