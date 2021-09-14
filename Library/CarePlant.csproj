@@ -98,6 +98,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\ActionLog.cs" />
+    <Compile Include="Model\Details.cs" />
     <Compile Include="ViewModels\Commands\LogInSectionCommand.cs" />
     <Compile Include="ViewModels\Commands\UserInterfaceCommand.cs" />
     <Compile Include="ViewModels\Commands\SignInSectionCommand.cs" />

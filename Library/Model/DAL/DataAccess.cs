@@ -256,5 +256,62 @@ namespace CarePlant.Model.DAL
 
 
         }
+
+
+
+        public List<ActionLog> GetActionLogs(Flower flower)
+        {
+            List<ActionLog> actionLogs = new List<ActionLog>();
+            using (connection = new MySqlConnection(connStringBuilder.ToString()))
+            {
+                MySqlCommand command1 = new MySqlCommand($"SELECT akc.id_akcji, akc.opis_akcji, dzi.fk_zestaw, dzi.czas_wykonania FROM dzienniki_akcji dzi " +
+                    $"JOIN akcje akc ON dzi.fk_akcji = akc.id_akcji WHERE dzi.fk_zestaw = {flower.ID}", connection);
+
+                connection.Open();
+                var dataReader = command1.ExecuteReader();
+                if (dataReader.HasRows)
+                {
+                    while (dataReader.Read())
+                        actionLogs.Add(new ActionLog((int)dataReader["id_akcji"], dataReader["opis_akcji"].ToString(), (int)dataReader["fk_zestaw"], (DateTime)dataReader["czas_wykonania"]));
+                }
+                connection.Close();
+            }
+
+            return actionLogs;
+        }
+
+        public Details GetDetails(Flower flower)
+        {
+            Details det = new Details(); 
+            using (connection = new MySqlConnection(connStringBuilder.ToString()))
+            {
+                MySqlCommand command1 = new MySqlCommand($"SELECT * FROM potrzeby WHERE id_rodziny = {flower.Species.Family.ID}", connection);
+
+                connection.Open();
+                var dataReader = command1.ExecuteReader();
+                if (dataReader.HasRows)
+                {
+                    dataReader.Read();
+                    det.position = dataReader["stanowisko"].ToString();
+                    det.watering = dataReader["podlewanie"].ToString();
+                    det.subsoil = dataReader["podloze"].ToString();
+                    det.fertilization = dataReader["nawoz"].ToString();
+                    det.difficulty = dataReader["latwosc"].ToString();
+                    det.decoration = dataReader["ozdoba"].ToString();
+                    det.moistruizel = dataReader["wilgoc"].ToString();
+                }
+                connection.Close();
+            }
+
+            return det;
+        }
+
+
+
+
+
+
+
+
     }
 }
