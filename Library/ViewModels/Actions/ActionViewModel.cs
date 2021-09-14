@@ -94,6 +94,7 @@ namespace CarePlant.ViewModels
         }
 
 
+
         private ICommand _perform = null;
         public ICommand Perform
         {

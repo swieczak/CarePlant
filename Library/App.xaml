@@ -21,7 +21,7 @@
             <DataTemplate DataType="{x:Type viewModel:PlantViewModel}">
                 <view:PlantView/>
             </DataTemplate>
-            <FontFamily x:Key="FontAwesome">/Fonts/FontAwesome.otf#FontAwesome</FontFamily>
+            <FontFamily x:Key="FontAwesome">/Views/Fonts/FontAwesome.otf#FontAwesome</FontFamily>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

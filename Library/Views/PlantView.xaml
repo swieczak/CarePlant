@@ -45,7 +45,9 @@
                             <GradientStop Color="Blue" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
-                    <Button Content="&#xf043;"  FontFamily="{StaticResource FontAwesome}" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Height="57" VerticalAlignment="Top" Width="55" Margin="0,0,0,-0.2">
+                    <Button Content="&#xf043;"  FontFamily="{StaticResource FontAwesome}" Background="Transparent" BorderThickness="0" 
+                            HorizontalAlignment="Left" Height="57" VerticalAlignment="Top" Width="55" Margin="0,0,0,-0.2"
+                            Command="{Binding Act}" CommandParameter="1">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="10"/>
@@ -62,7 +64,9 @@
                             <GradientStop Color="CornflowerBlue" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
-                    <Button Content="&#xf2cc;" FontFamily="{StaticResource FontAwesome}" Background="Transparent" BorderThickness="0" Height="57" Margin="0,0,-0.2,-0.2" VerticalAlignment="Top">
+                    <Button Content="&#xf2cc;" FontFamily="{StaticResource FontAwesome}" Background="Transparent" BorderThickness="0" 
+                            Height="57" Margin="0,0,-0.2,-0.2" VerticalAlignment="Top"
+                            Command="{Binding Act}" CommandParameter="6">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="10"/>
@@ -79,7 +83,9 @@
                             <GradientStop Color="DarkRed" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
-                    <Button Content="&#xf242;" FontFamily="{StaticResource FontAwesome}" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0"  Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2">
+                    <Button Content="&#xf242;" FontFamily="{StaticResource FontAwesome}" HorizontalAlignment="Left" Background="Transparent" 
+                            BorderThickness="0"  Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2"
+                            Command="{Binding Act}" CommandParameter="2">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="10"/>
@@ -96,7 +102,9 @@
                             <GradientStop Color="Coral" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
-                    <Button Content="&#xf079;" FontFamily="{StaticResource FontAwesome}" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Height="57" Margin="0,0,-0.2,-0.2" VerticalAlignment="Top" Width="53">
+                    <Button Content="&#xf079;" FontFamily="{StaticResource FontAwesome}" HorizontalAlignment="Left" Background="Transparent" 
+                            BorderThickness="0" Height="57" Margin="0,0,-0.2,-0.2" VerticalAlignment="Top" Width="53"
+                            Command="{Binding Act}" CommandParameter="2">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="10"/>
@@ -113,7 +121,9 @@
                             <GradientStop Color="RosyBrown" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
-                    <Button Content="&#xf0a3;" FontFamily="{StaticResource FontAwesome}" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2">
+                    <Button Content="&#xf0a3;" FontFamily="{StaticResource FontAwesome}" HorizontalAlignment="Left" Background="Transparent" 
+                            BorderThickness="0" Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2"
+                            Command="{Binding Act}" CommandParameter="3">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="10"/>
@@ -130,7 +140,9 @@
                             <GradientStop Color="GreenYellow" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
-                    <Button Content="&#xf299;" FontFamily="{StaticResource FontAwesome}" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2">
+                    <Button Content="&#xf299;" FontFamily="{StaticResource FontAwesome}" HorizontalAlignment="Left" Background="Transparent" 
+                            BorderThickness="0" Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2"
+                            Command="{Binding Act}" CommandParameter="4">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="10"/>
@@ -147,7 +159,9 @@
                             <GradientStop Color="DeepPink" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
-                    <Button Content="&#xf185;" FontFamily="{StaticResource FontAwesome}" HorizontalAlignment="Left" Background="Transparent" BorderThickness="0" Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2">
+                    <Button Content="&#xf185;" FontFamily="{StaticResource FontAwesome}" HorizontalAlignment="Left" Background="Transparent" 
+                            BorderThickness="0" Height="57" VerticalAlignment="Top" Width="53" Margin="0,0,-0.2,-0.2"
+                            Command="{Binding Act}" CommandParameter="7">
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="10"/>

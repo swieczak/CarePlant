@@ -184,6 +184,7 @@ namespace CarePlant.ViewModels
                             dataAccess.DeleteFlower(currentFlower);
                             Flowers = dataAccess.GetFlowers(LogInViewModel.logInfo);
                         }
+                        // else wyświetl komunikat wybierz roślinę z listy
                     }
                     ,
                     p => true)
@@ -206,6 +207,45 @@ namespace CarePlant.ViewModels
                                 Flowers = dataAccess.GetFlowers(LogInViewModel.logInfo);
                             }
                         }
+                        // else wyświetl komunikat wybierz roślinę z listy
+                    }
+                    ,
+                    p => true)
+                    );
+            }
+        }
+
+
+        private ICommand _act = null;
+        public ICommand Act
+        {
+            get
+            {
+                return _act ?? (_act = new BaseClass.RelayCommand(
+                    (p) =>
+                    {
+                        if (currentFlower != null)
+                        {
+                            int idAkcji = int.Parse((string)p);
+                            List<Todo> todosy = dataAccess.GetToDoList(LogInViewModel.logInfo);
+                            bool undone = true;
+                            foreach (Todo todo in todosy)
+                            {
+                                if (todo.IDAkcji == idAkcji && todo.IDFlower == currentFlower.ID)
+                                {
+                                    todo.Perform();
+                                    undone = false;
+                                }
+                            }
+                            if (undone)
+                                dataAccess.Perform(currentFlower.ID, idAkcji);
+
+                            //Wyświetl komunikat o zapisanej akcji
+
+
+                        }
+                        // else wyświetl komunikat wybierz roślinę z listy
+
                     }
                     ,
                     p => true)

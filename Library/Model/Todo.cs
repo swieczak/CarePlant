@@ -28,6 +28,17 @@ namespace CarePlant.Model
             nastWyk = NastWyk;
         }
 
+        public int IDAkcji 
+        {
+            get { return idAkcji; }
+            set { idAkcji = value; }
+        }
+        public int IDFlower
+        {
+            get { return idKwiat; }
+            set { idKwiat = value; }
+        }
+
         public DateTime next()
         {
             return ostWyk.AddDays(nastWyk).Date;

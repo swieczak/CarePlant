@@ -98,11 +98,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Commands\LogInSectionCommand.cs" />
-    <Compile Include="Commands\UserInterfaceCommand.cs" />
-    <Compile Include="Commands\SignInSectionCommand.cs" />
-    <Compile Include="Core\ObservableObjects.cs" />
-    <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="ViewModels\Commands\LogInSectionCommand.cs" />
+    <Compile Include="ViewModels\Commands\UserInterfaceCommand.cs" />
+    <Compile Include="ViewModels\Commands\SignInSectionCommand.cs" />
+    <Compile Include="ViewModels\BaseClass\Core\ObservableObjects.cs" />
+    <Compile Include="ViewModels\BaseClass\Core\RelayCommand.cs" />
     <Compile Include="Model\Flower.cs" />
     <Compile Include="Model\LogInInfo.cs" />
     <Compile Include="Model\SignInfo.cs" />
@@ -215,13 +215,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Content Include="Fonts\FontAwesome.otf">
+    <Content Include="Views\Fonts\FontAwesome.otf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Fonts\fontawesome-webfont.ttf" />
-    <Content Include="Fonts\fontawesome-webfont.eot" />
-    <Content Include="Fonts\fontawesome-webfont.woff" />
-    <Content Include="Fonts\fontawesome-webfont.woff2" />
+    <Content Include="Views\Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Views\Fonts\fontawesome-webfont.eot" />
+    <Content Include="Views\Fonts\fontawesome-webfont.woff" />
+    <Content Include="Views\Fonts\fontawesome-webfont.woff2" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -232,9 +232,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\font-awesome.css" />
-    <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Fonts\fontawesome-webfont.svg" />
+    <Content Include="Views\Content\font-awesome.css" />
+    <Content Include="Views\Content\font-awesome.min.css" />
+    <Content Include="Views\Fonts\fontawesome-webfont.svg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
