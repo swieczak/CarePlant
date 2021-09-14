@@ -43,7 +43,7 @@
                         <System:Double>150</System:Double>
                     </Grid.Height>
                     <Button x:Name="Exit" Click="Exit_Click"
-                        Margin="295,98,289,6"
+                        Margin="302,119,282,-15"
                        >
 
                         <Button.Resources>
@@ -60,7 +60,7 @@
 
                 </Grid>
             </Grid>
-            <Ellipse Width="350" Height="600" Fill="FloralWhite" RenderTransformOrigin="0.5,0.5" Canvas.Top="-52">
+            <Ellipse Width="385" Height="600" Fill="FloralWhite" RenderTransformOrigin="0.5,0.5" Canvas.Top="-55">
                 <Ellipse.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -70,11 +70,11 @@
                     </TransformGroup>
                 </Ellipse.RenderTransform>
                 <Canvas.Left>
-                    <System:Double>223</System:Double>
+                    <System:Double>216</System:Double>
                 </Canvas.Left>
 
             </Ellipse>
-            <Label Width="115" Height="35" Content="Watering:" FontSize="16" Foreground="DarkGreen"
+            <Label Width="115" Height="35" Content="Watering:" FontSize="13" Foreground="DarkGreen"
                                    Canvas.Left="230" Canvas.Top="160"/>
             <Ellipse Width="65" Height="28" Fill="ForestGreen" RenderTransformOrigin="0.5,0.5" Canvas.Top="368">
                 <Ellipse.RenderTransform>
@@ -118,101 +118,89 @@
                 </Canvas.Left>
 
             </Ellipse>
-            <Label Width="116" Height="35" Content="Subsoil:" FontSize="16" Foreground="DarkGreen"
+            <Label Width="116" Height="35" Content="Subsoil:" FontSize="13" Foreground="DarkGreen"
                 Canvas.Left="230" Canvas.Top="195"/>
-            <Label Width="115" Height="35" Content="Fertilization:" FontSize="16" Foreground="DarkGreen"
+            <Label Width="115" Height="35" Content="Fertilization:" FontSize="13" Foreground="DarkGreen"
                 Canvas.Left="230" Canvas.Top="230"/>
-            <Label Width="115" Height="34" Content="Difficulty:" FontSize="16" Foreground="DarkGreen"
+            <Label Width="115" Height="34" Content="Difficulty:" FontSize="13" Foreground="DarkGreen"
                 Canvas.Left="231" Canvas.Top="266"/>
-            <Label Width="115" Height="35" Content="Decoration:" FontSize="16" Foreground="DarkGreen"
+            <Label Width="115" Height="35" Content="Decoration:" FontSize="13" Foreground="DarkGreen"
                 Canvas.Left="230" Canvas.Top="300" RenderTransformOrigin="0.523,0.952"/>
-            <Label Width="116" Height="35" Content="Position:" FontSize="16" Foreground="DarkGreen"
+            <Label Width="116" Height="35" Content="Position:" FontSize="13" Foreground="DarkGreen"
                 Canvas.Left="230" Canvas.Top="125"/>
             <Label Width="98" Height="35" Content="NAME" FontSize="20" HorizontalAlignment="Center" Foreground="DarkGreen"
-                Canvas.Left="362" Canvas.Top="90"/>
-            <Label Width="116" Height="35" Content="Moisturizing:" FontSize="16" Foreground="DarkGreen"
+                Canvas.Left="373" Canvas.Top="71"/>
+            <Label Width="116" Height="35" Content="Moisturize:" FontSize="13" Foreground="DarkGreen"
                 Canvas.Left="230" Canvas.Top="335"/>
 
 
 
-            <Border  CornerRadius="10" Height="30" Canvas.Left="343" Canvas.Top="125" Width="164">
+            <Border  CornerRadius="10" Height="30" Canvas.Left="304" Canvas.Top="125" Width="121">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                         <GradientStop Color="LightPink" Offset="0.0"/>
                         <GradientStop Color="DeepPink" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
-                <Label Width="116" Height="35" Content="" FontSize="16" Foreground="Black"
-                Canvas.Left="344" Canvas.Top="125"/>
+                <TextBlock HorizontalAlignment="Left" Height="20" Margin="8,5,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="102"/>
             </Border>
-            <Border BorderBrush="Black" CornerRadius="10" Height="30" Canvas.Left="343" Canvas.Top="165" Width="164">
+            <Border BorderBrush="Black" CornerRadius="10" Height="30" Canvas.Left="304" Canvas.Top="160" Width="121">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                         <GradientStop Color="LightSeaGreen" Offset="0.0"/>
                         <GradientStop Color="Blue" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
-
-                <Label Width="115" Height="35" Content="" FontSize="16" Foreground="Black"
-                Canvas.Left="344" Canvas.Top="160"/>
+                <TextBlock HorizontalAlignment="Left" Height="20" Margin="8,5,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="102"/>
             </Border>
-            <Border BorderBrush="Black"  CornerRadius="10" Height="30" Canvas.Left="343" Canvas.Top="201" Width="164">
+            <Border BorderBrush="Black"  CornerRadius="10" Height="30" Canvas.Left="304" Canvas.Top="195" Width="121">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                         <GradientStop Color="LightYellow" Offset="0.0"/>
                         <GradientStop Color="DarkRed" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
-
-                <Label Width="115" Height="35"  Content="" FontSize="16" Foreground="Black"
-                Canvas.Left="344" Canvas.Top="160"/>
+                <TextBlock HorizontalAlignment="Left" Height="20" Margin="8,5,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="102"/>
             </Border>
-            <Border BorderBrush="Black" CornerRadius="10" Height="30" Canvas.Left="343" Canvas.Top="236" Width="164">
+            <Border BorderBrush="Black" CornerRadius="10" Height="30" Canvas.Left="304" Canvas.Top="231" Width="121">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                         <GradientStop Color="LightGoldenrodYellow" Offset="0.0"/>
                         <GradientStop Color="Coral" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
-
-                <Label Width="115" Height="35" Content="" FontSize="16" Foreground="Black"
-                Canvas.Left="344" Canvas.Top="160"/>
+                <TextBlock HorizontalAlignment="Left" Height="20" Margin="8,5,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="102"/>
             </Border>
-            <Border BorderBrush="Black" CornerRadius="10" Height="30" Canvas.Left="343" Canvas.Top="341" Width="164">
+            <Border BorderBrush="Black" CornerRadius="10" Height="30" Canvas.Left="304" Canvas.Top="336" Width="121">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                         <GradientStop Color="LightSkyBlue" Offset="0.0"/>
                         <GradientStop Color="CornflowerBlue" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
-
-                <Label Width="115" Height="35" Content="" FontSize="16" Foreground="Black"
-                Canvas.Left="344" Canvas.Top="160"/>
+                <TextBlock HorizontalAlignment="Left" Height="20" Margin="8,5,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="102"/>
             </Border>
 
-            <Border BorderBrush="Black" CornerRadius="10" Height="30" Canvas.Left="343" Canvas.Top="306" Width="164">
+            <Border BorderBrush="Black" CornerRadius="10" Height="30" Canvas.Left="304" Canvas.Top="301" Width="121">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                         <GradientStop Color="LemonChiffon" Offset="0.0"/>
                         <GradientStop Color="GreenYellow" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
-
-                <Label Width="115" Height="35" Content="" FontSize="16" Foreground="Black"
-                Canvas.Left="344" Canvas.Top="160"/>
+                <TextBlock HorizontalAlignment="Left" Height="20" Margin="8,5,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="102"/>
             </Border>
 
-            <Border BorderBrush="Black" CornerRadius="10" Height="30" Canvas.Left="343" Canvas.Top="271" Width="164">
+            <Border BorderBrush="Black" CornerRadius="10" Height="30" Canvas.Left="304" Canvas.Top="266" Width="121">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                         <GradientStop Color="LightGoldenrodYellow" Offset="0.0"/>
                         <GradientStop Color="RosyBrown" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
-
-                <Label Width="115" Height="35" Content="" FontSize="16" Foreground="Black"
-                Canvas.Left="344" Canvas.Top="160"/>
+                <TextBlock HorizontalAlignment="Left" Height="20" Margin="8,5,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="102"/>
             </Border>
+            <ListBox Height="241" Canvas.Left="441" Canvas.Top="125" Width="165"/>
 
         </Canvas>
     </Grid>

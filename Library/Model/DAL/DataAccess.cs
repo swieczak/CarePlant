@@ -30,17 +30,17 @@ namespace CarePlant.Model.DAL
 
         }
 
-        public List <Family> getFamilies()
+        public List<Family> getFamilies()
         {
-            List <Family> families = new List<Family>();
-            using(connection = new MySqlConnection(connStringBuilder.ToString()))
+            List<Family> families = new List<Family>();
+            using (connection = new MySqlConnection(connStringBuilder.ToString()))
             {
                 MySqlCommand command = new MySqlCommand(GET_FAMILIES_QUERY, connection);
                 connection.Open();
                 var dataReader = command.ExecuteReader();
-                if(dataReader.HasRows)
+                if (dataReader.HasRows)
                 {
-                    while(dataReader.Read())
+                    while (dataReader.Read())
                     {
                         families.Add(new Family(dataReader["nazwa"].ToString(), (int)dataReader["id_rodziny"]));
                     }
@@ -65,7 +65,7 @@ namespace CarePlant.Model.DAL
                     {
                         species.Add(new Species(
                             dataReader["nazwa_gatunku"].ToString(), (int)dataReader["id_gatunki"], dataReader["nazwa_rodziny"].ToString(), (int)dataReader["id_rodziny"]
-                            ) );
+                            ));
                     }
                 }
             }
@@ -94,7 +94,6 @@ namespace CarePlant.Model.DAL
                 if (dataReader.HasRows)
                 {
                     connection.Close();
-                    
                     return signed;
                     // dodaj rekord do tablicu osoby
                     //var dataExecutor = command2.metodawywołującakomendę();
@@ -139,17 +138,17 @@ namespace CarePlant.Model.DAL
             List<Flower> Flowers = new List<Flower>();
             using (connection = new MySqlConnection(connStringBuilder.ToString()))
             {
-                
+
                 //komenda sprawdzająca istnienie danych w bazie
                 MySqlCommand command1 = new MySqlCommand($"SELECT * FROM zestaw_szczegolowy WHERE fk_osoby ={loginInfo.ID}", connection);
-                
+
                 connection.Open();
                 var dataReader = command1.ExecuteReader();
                 if (dataReader.HasRows)
                 {
                     while (dataReader.Read())
-                        Flowers.Add(new Flower(dataReader["nazwa"].ToString(), (int)dataReader["id_zestaw"], 
-                            dataReader["gatunek"].ToString(), (int)dataReader["id_gatunku"], 
+                        Flowers.Add(new Flower(dataReader["nazwa"].ToString(), (int)dataReader["id_zestaw"],
+                            dataReader["gatunek"].ToString(), (int)dataReader["id_gatunku"],
                             dataReader["nazwa_rodziny"].ToString(), (int)dataReader["id_rodziny"]));
                 }
                 connection.Close();
@@ -160,7 +159,7 @@ namespace CarePlant.Model.DAL
         public List<Todo> GetToDoList(LogInInfo loginInfo)
         {
             List<Todo> Todos = new List<Todo>();
-            using(connection = new MySqlConnection(connStringBuilder.ToString()))
+            using (connection = new MySqlConnection(connStringBuilder.ToString()))
             {
                 MySqlCommand command1 = new MySqlCommand($"SELECT * FROM todosy WHERE fk_osoby ={loginInfo.ID} ORDER BY ost_wykonanie", connection);
 
@@ -169,15 +168,15 @@ namespace CarePlant.Model.DAL
                 if (dataReader.HasRows)
                 {
                     while (dataReader.Read())
-                        Todos.Add(new Todo((int)dataReader["id_akcji"], dataReader["opis_akcji"].ToString(),(int)dataReader["id_zestaw"], dataReader["nazwa"].ToString(),
-                            (DateTime)dataReader["ost_wykonanie"], (int)dataReader["kiedy_wykonac"] ));
+                        Todos.Add(new Todo((int)dataReader["id_akcji"], dataReader["opis_akcji"].ToString(), (int)dataReader["id_zestaw"], dataReader["nazwa"].ToString(),
+                            (DateTime)dataReader["ost_wykonanie"], (int)dataReader["kiedy_wykonac"]));
                 }
                 connection.Close();
             }
 
             return Todos;
         }
-        
+
         public bool AddFlower(LogInInfo loginInfo, Species species, String name)
         {
             if (species == null || name == null || name == "")
@@ -206,7 +205,7 @@ namespace CarePlant.Model.DAL
 
         public bool DeleteFlower(Flower flower)
         {
-            
+
             using (connection = new MySqlConnection(connStringBuilder.ToString()))
             {
                 MySqlCommand command = new MySqlCommand($"DELETE FROM kto_ma_co WHERE id_zestaw = {flower.ID};", connection);
@@ -238,7 +237,9 @@ namespace CarePlant.Model.DAL
                 connection.Open();
                 command.ExecuteNonQuery();
                 connection.Close();
+
             }
+
 
         }
 
@@ -252,7 +253,8 @@ namespace CarePlant.Model.DAL
                 connection.Close();
             }
 
-        }
 
+
+        }
     }
 }
