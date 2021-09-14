@@ -191,7 +191,7 @@
                    FontSize="20"
                    HorizontalAlignment="Right"
                    Margin="0,0,20,80"/>
-            <Button Margin="24,-60,19.8,0" Height="36" Command="{Binding Add}">
+            <Button Margin="24,-60,19.8,0" Height="36" Command="{Binding Add}" BorderBrush="{x:Null}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
@@ -209,7 +209,7 @@
                            FontSize="20"/>
 
             </Button>
-            <Button Margin="24,-6,19.8,0" Height="36" Command="{Binding Edi}">
+            <Button Margin="24,-6,19.8,0" Height="36" Command="{Binding Edi}" BorderBrush="{x:Null}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
@@ -225,7 +225,7 @@
                     Foreground="White"
                     FontSize="20"/>
             </Button>
-            <Button Margin="24,6,19.8,0" Height="36" Command="{Binding Del}">
+            <Button Margin="24,6,19.8,0" Height="36" Command="{Binding Del}" BorderBrush="{x:Null}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>
@@ -267,7 +267,7 @@
                       ItemsSource="{Binding Species}" SelectedItem="{Binding CurrentSpecies, Mode=TwoWay}" />
 
             <TextBox Margin="0,0,-0.2,80" Height="22" Text="{Binding CurrentName, Mode=TwoWay}"/>
-            <Button Margin="24,-40,21.8,0" Height="76" Command="">
+            <Button Margin="24,-40,21.8,0" Height="76" Command="" BorderBrush="{x:Null}">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="10"/>

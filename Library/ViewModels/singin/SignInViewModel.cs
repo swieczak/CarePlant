@@ -73,7 +73,7 @@ namespace CarePlant.ViewModels
             }
         }
 
-        private bool isEmpty() 
+        private bool IsEmpty() 
         {
             if (signInfo.Name == "" || signInfo.Nick == "" || signInfo.Password == "" || signInfo.Surname == "")
             {
@@ -98,8 +98,12 @@ namespace CarePlant.ViewModels
                     //co wykonuje polecenie
                     //które należy sprecyzować w dalszej części działania
                     (p) => {
-                        if (isEmpty()) DialogBox.Show("Please, fill any empty spaces left");
-                        else dataAccess.signing(signInfo);
+                        if (IsEmpty()) DialogBox.Show("Please, fill any empty spaces left");
+                        else 
+                        {
+                            if (dataAccess.signing(signInfo)) DialogBox.Show("User has been succesfully registered");
+                            else DialogBox.Show("User with these credentials is already registered \nor connection with the server has been lost");
+                        }
                     }
                     ,
                     //warunek kiedy może je wykonać

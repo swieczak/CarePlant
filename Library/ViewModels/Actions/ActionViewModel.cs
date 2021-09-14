@@ -94,7 +94,6 @@ namespace CarePlant.ViewModels
         }
 
 
-
         private ICommand _perform = null;
         public ICommand Perform
         {
@@ -103,8 +102,12 @@ namespace CarePlant.ViewModels
                 return _perform ?? (_perform = new BaseClass.RelayCommand(
                     (p) =>
                     {
-                        selectedTodo.Perform();
-                        this.split();
+                        if (Todo.IsNotNull(SelectedTodo))
+                        {
+                            selectedTodo.Perform();
+                            this.split();
+                        }
+                        else DialogBox.Show("Click on the action, you'd like to perform");
                     }
                     ,
                     p => true)
@@ -119,8 +122,12 @@ namespace CarePlant.ViewModels
                 return _delay ?? (_delay = new BaseClass.RelayCommand(
                     (p) =>
                     {
-                        selectedTodo.Delay();
-                        this.split();
+                        if (Todo.IsNotNull(SelectedTodo))
+                        {
+                            selectedTodo.Delay();
+                            this.split();
+                        }
+                        else DialogBox.Show("Click on the action, you'd like to delay");
                     }
                     ,
                     p => true)

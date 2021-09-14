@@ -155,16 +155,26 @@ namespace CarePlant.ViewModels
             }
         }
 
+        private bool DontAddEmpty()
+        {
+            if (CurrentSpecies == null || currentName == "") return false;
+            else return true;
+        }
+
         private ICommand _add = null;
         public ICommand Add
         {
             get
             {
                 return _add ?? (_add = new BaseClass.RelayCommand(
-                    (p) => 
-                    { 
-                        dataAccess.AddFlower(LogInViewModel.logInfo, currentSpecies, currentName); 
-                        Flowers = dataAccess.GetFlowers(LogInViewModel.logInfo); 
+                    (p) =>
+                    {
+                        if (DontAddEmpty())
+                        {
+                            dataAccess.AddFlower(LogInViewModel.logInfo, currentSpecies, currentName);
+                            Flowers = dataAccess.GetFlowers(LogInViewModel.logInfo);
+                        }
+                        else DialogBox.Show("Dont. Add. Empty. >:( ");
                     }
                     ,
                     p => true)
@@ -183,8 +193,10 @@ namespace CarePlant.ViewModels
                         {
                             dataAccess.DeleteFlower(currentFlower);
                             Flowers = dataAccess.GetFlowers(LogInViewModel.logInfo);
+                            DialogBox.Show("Bless your soul, rest in eternal peace...");
                         }
                         // else wyświetl komunikat wybierz roślinę z listy
+                        else DialogBox.Show("First, choose a plant from the given list.");
                     }
                     ,
                     p => true)
@@ -208,6 +220,7 @@ namespace CarePlant.ViewModels
                             }
                         }
                         // else wyświetl komunikat wybierz roślinę z listy
+                        else DialogBox.Show("First, choose a plant from the given list.");
                     }
                     ,
                     p => true)
@@ -241,11 +254,12 @@ namespace CarePlant.ViewModels
                                 dataAccess.Perform(currentFlower.ID, idAkcji);
 
                             //Wyświetl komunikat o zapisanej akcji
+                            DialogBox.Show("Your action has been registered");
 
 
                         }
                         // else wyświetl komunikat wybierz roślinę z listy
-
+                        else DialogBox.Show("First, choose a plant from the given list.");
                     }
                     ,
                     p => true)

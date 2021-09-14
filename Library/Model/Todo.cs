@@ -44,6 +44,11 @@ namespace CarePlant.Model
             return ostWyk.AddDays(nastWyk).Date;
         }
 
+        public static bool IsNotNull(Todo todo) 
+        {
+            if (todo == null) return false;
+            else return true;
+        }
         public override string ToString()
         {
             return $"{nazwaKwiat}: {nazwaAkcji}, {this.next().ToString("dd.MM.yyyy r.")}";
