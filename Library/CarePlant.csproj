@@ -129,6 +129,9 @@
     <Compile Include="Views\HubView.xaml.cs">
       <DependentUpon>HubView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\MyPlantView.xaml.cs">
+      <DependentUpon>MyPlantView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MyPlantWindow.xaml.cs">
       <DependentUpon>MyPlantWindow.xaml</DependentUpon>
     </Compile>
@@ -156,6 +159,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\HubView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MyPlantView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
