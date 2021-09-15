@@ -40,25 +40,11 @@
                     <Grid.Height>
                         <System:Double>150</System:Double>
                     </Grid.Height>
-                    <Button x:Name="Exit" Click="Exit_Click"
-                        Margin="302,119,282,-15"
-                       >
-
-                        <Button.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="10"/>
-                            </Style>
-
-                        </Button.Resources>
-                        <Button.Style>
-                            <StaticResource ResourceKey="ReturnButtonStyle"/>
-                        </Button.Style>
-                    </Button>
-
+                    
 
                 </Grid>
             </Grid>
-            <Ellipse Width="385" Height="600" Fill="FloralWhite" RenderTransformOrigin="0.5,0.5" Canvas.Top="-55">
+            <Ellipse Width="385" Height="600" Fill="FloralWhite" RenderTransformOrigin="0.5,0.5" Canvas.Top="-55" Stroke="ForestGreen" StrokeThickness="4">
                 <Ellipse.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -198,6 +184,21 @@
                 </Border.Background>
                 <TextBlock HorizontalAlignment="Left" Height="20" Margin="8,5,0,0" TextWrapping="Wrap" Text="{Binding Difficulty}" VerticalAlignment="Top" Width="102"/>
             </Border>
+            <Button x:Name="Exit" Click="Exit_Click"
+                        Margin="362,375,279,0"
+                       >
+
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+
+                </Button.Resources>
+                <Button.Style>
+                    <StaticResource ResourceKey="ReturnButtonStyle"/>
+                </Button.Style>
+            </Button>
+
             <ListBox Height="241" Canvas.Left="441" Canvas.Top="125" Width="192" ItemsSource="{Binding ActionLogs, Mode=OneWay}"/>
 
         </Canvas>
